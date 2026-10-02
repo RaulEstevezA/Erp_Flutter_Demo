@@ -1,0 +1,192 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../../core/di/app_services.dart';
+import '../../core/roles/permissions.dart';
+import '../../core/session/session_store.dart';
+import '../../l10n/app_localizations.dart';
+import '../attendance/records_screen.dart';
+import '../attendance/records_view_model.dart';
+import '../holidays/holidays_screen.dart';
+import '../holidays/holidays_view_model.dart';
+import '../home/home_screen.dart';
+import '../home/home_view_model.dart';
+import '../incidents/incidents_screen.dart';
+import '../incidents/incidents_view_model.dart';
+import 'app_drawer.dart';
+import 'app_section.dart';
+
+/// Contenedor de la app autenticada.
+///
+/// Un único Scaffold con el menú lateral; el cuerpo es la sección activa,
+/// que pinta su propio AppBar. Los detalles se apilan con Navigator.push.
+/// El botón atrás del sistema lleva al inicio y, desde el inicio, sale.
+class AppShell extends StatefulWidget {
+  final AppServices services;
+  final SessionUser user;
+  final VoidCallback onLogout;
+
+  const AppShell({
+    super.key,
+    required this.services,
+    required this.user,
+    required this.onLogout,
+  });
+
+  @override
+  State<AppShell> createState() => _AppShellState();
+}
+
+class _AppShellState extends State<AppShell> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  AppSection _section = AppSection.home;
+
+  late final HomeViewModel _home = HomeViewModel(widget.services.attendance);
+  late final RecordsViewModel _records = RecordsViewModel(
+    widget.services.attendance,
+    canViewAll: widget.user.role.can(AppPermission.viewAllAttendance),
+  );
+  late final IncidentsViewModel _incidents = IncidentsViewModel(
+    widget.services.attendance,
+    canViewAll: widget.user.role.can(AppPermission.viewAllAttendance),
+  );
+  late final HolidaysViewModel _holidays = HolidaysViewModel(
+    widget.services.holidays,
+    userId: widget.user.id,
+    role: widget.user.role,
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _home.loadStatus();
+  }
+
+  @override
+  void dispose() {
+    _home.dispose();
+    _records.dispose();
+    _incidents.dispose();
+    _holidays.dispose();
+    super.dispose();
+  }
+
+  void _openDrawer() => _scaffoldKey.currentState?.openDrawer();
+
+  void _goHome() => _select(AppSection.home);
+
+  /// Cambia de sección reiniciando su estado (mes actual, sin filtros).
+  void _select(AppSection section) {
+    if (!section.isImplemented) {
+      final l10n = AppLocalizations.of(context);
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(content: Text(l10n.comingSoon(section.label(l10n)))),
+        );
+      return;
+    }
+    // Sin conexión solo se permite el inicio.
+    if (section != AppSection.home && _home.hasConnectionError) return;
+
+    switch (section) {
+      case AppSection.home:
+        _home.loadStatus();
+      case AppSection.attendanceRecords:
+        _records.init();
+      case AppSection.incidents:
+        _incidents.init();
+      case AppSection.holidays:
+        _holidays.init();
+      default:
+        break;
+    }
+    setState(() => _section = section);
+  }
+
+  Widget _body() {
+    return switch (_section) {
+      AppSection.attendanceRecords => RecordsScreen(
+          viewModel: _records,
+          onOpenDrawer: _openDrawer,
+          onBack: _goHome,
+          onIncidentCreated: () => _select(AppSection.incidents),
+        ),
+      AppSection.incidents => IncidentsScreen(
+          viewModel: _incidents,
+          onOpenDrawer: _openDrawer,
+          onBack: _goHome,
+        ),
+      AppSection.holidays => HolidaysScreen(
+          viewModel: _holidays,
+          onOpenDrawer: _openDrawer,
+          onBack: _goHome,
+        ),
+      _ => HomeScreen(
+          viewModel: _home,
+          user: widget.user,
+          onSectionSelected: _select,
+          onOpenDrawer: _openDrawer,
+        ),
+    };
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final settings = widget.services.settings;
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        if (_section != AppSection.home) {
+          _goHome();
+        } else {
+          SystemNavigator.pop();
+        }
+      },
+      child: ListenableBuilder(
+        listenable: Listenable.merge([_home, settings]),
+        builder: (context, _) {
+          return Scaffold(
+            key: _scaffoldKey,
+            drawerEdgeDragWidth: 40,
+            drawer: AppDrawer(
+              user: widget.user,
+              current: _section,
+              isDark: settings.isDark,
+              offline: _home.hasConnectionError,
+              onSelect: _select,
+              onToggleTheme: settings.toggleTheme,
+              onLogout: widget.onLogout,
+            ),
+            body: Stack(
+              children: [
+                // La sección cambia con un fundido suave.
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 200),
+                  child: KeyedSubtree(key: ValueKey(_section), child: _body()),
+                ),
+                // Los Scaffold de cada sección se quedan los gestos
+                // horizontales; esta franja del borde izquierdo los recoge
+                // para abrir el menú arrastrando.
+                Positioned(
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: 20,
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onHorizontalDragEnd: (details) {
+                      if ((details.primaryVelocity ?? 0) > 300) _openDrawer();
+                    },
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}

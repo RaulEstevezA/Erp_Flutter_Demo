@@ -1,0 +1,230 @@
+{
+  "@@locale": "es",
+  "appName": "ERP Flutter",
+  "splashTagline": "Gestión de personal en movilidad",
+  "dialogAccept": "Aceptar",
+  "dialogCancel": "Cancelar",
+  "retry": "Reintentar",
+  "comingSoon": "{section} estará disponible próximamente.",
+  "@comingSoon": {
+    "placeholders": {
+      "section": {
+        "type": "String"
+      }
+    }
+  },
+  "loginTitle": "Inicio de sesión",
+  "loginServerUrlLabel": "URL del servidor",
+  "loginServerUrlHelper": "Escribe «demo» para usar los datos incluidos en la app",
+  "loginEmailLabel": "Correo electrónico",
+  "loginPasswordLabel": "Contraseña",
+  "loginRememberUrl": "Recordar URL",
+  "loginRememberUser": "Recordar usuario",
+  "loginSubmit": "Iniciar sesión",
+  "loginDemoAccounts": "Cuentas de demostración",
+  "loginDemoAccountsHint": "Toca una cuenta para rellenar el formulario. Contraseña: {password}",
+  "@loginDemoAccountsHint": {
+    "placeholders": {
+      "password": {
+        "type": "String"
+      }
+    }
+  },
+  "loginErrorEmptyServerUrl": "Debes introducir la URL del servidor.",
+  "loginErrorEmptyEmail": "Debes introducir tu correo electrónico.",
+  "loginErrorEmptyPassword": "Debes introducir la contraseña.",
+  "loginErrorInvalidCredentials": "Las credenciales no son correctas.",
+  "loginErrorAccessDenied": "Tu usuario no tiene acceso a la aplicación.",
+  "loginErrorInvalidUrl": "La URL del servidor no es válida.",
+  "loginErrorServerNotFound": "No se ha encontrado un servidor ERP en esa URL.",
+  "loginErrorNetwork": "No se ha podido conectar con el servidor.",
+  "loginErrorTimeout": "La conexión con el servidor ha tardado demasiado.",
+  "loginErrorServer": "Se ha producido un error en el servidor.",
+  "loginErrorUnknown": "Se ha producido un error inesperado.",
+  "roleSuperAdmin": "Superadministrador",
+  "roleAdmin": "Administrador",
+  "roleUser": "Usuario",
+  "roleWorker": "Trabajador",
+  "roleCustomer": "Cliente",
+  "roleSupplier": "Proveedor",
+  "roleUnknown": "Sin rol",
+  "homeTitle": "Inicio",
+  "homeWelcome": "Bienvenido a {company},",
+  "@homeWelcome": {
+    "placeholders": {
+      "company": {
+        "type": "String"
+      }
+    }
+  },
+  "homeConnectionError": "No se ha podido conectar con el servidor",
+  "homeConnectionLost": "Se ha perdido la conexión con el servidor",
+  "clockStartShift": "Iniciar / Continuar turno",
+  "clockEndShift": "Finalizar / Hacer pausa",
+  "clockConfirmStartTitle": "¿Iniciar turno?",
+  "clockConfirmStartMessage": "¿Quieres iniciar turno / terminar pausa?",
+  "clockConfirmEndTitle": "¿Finalizar turno?",
+  "clockConfirmEndMessage": "¿Quieres finalizar turno / empezar pausa?",
+  "clockSyncedStarted": "Tu turno ya había sido iniciado desde otro dispositivo. Estado actualizado.",
+  "clockSyncedEnded": "Tu turno ya había sido finalizado desde otro dispositivo. Estado actualizado.",
+  "clockError": "No se ha podido registrar el fichaje. Inténtalo de nuevo.",
+  "clockInDone": "Entrada registrada a las {time}",
+  "@clockInDone": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "clockOutDone": "Salida registrada a las {time}",
+  "@clockOutDone": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "menuAttendanceRecords": "Ver fichajes",
+  "menuIncidents": "Incidencias",
+  "menuWorkReports": "Partes de trabajo",
+  "menuClients": "Clientes",
+  "menuVisitReports": "Partes de visita",
+  "menuHolidays": "Vacaciones",
+  "menuMessages": "Mensajes",
+  "menuLogout": "Cerrar sesión",
+  "settingsDarkMode": "Modo oscuro",
+  "settingsLightMode": "Modo claro",
+  "drawerVersion": "Versión {version}",
+  "@drawerVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "clockTypeIn": "Entrada",
+  "clockTypeOut": "Salida",
+  "recordsTitle": "Fichajes",
+  "recordsEmpty": "No hay fichajes en este período.",
+  "recordsLoadError": "No se han podido cargar los fichajes.",
+  "recordsLocation": "Ubicación (aprox.)",
+  "groupByEmployee": "Agrupar por empleado",
+  "filterByDates": "Filtrar por fechas",
+  "dateFrom": "Desde",
+  "dateTo": "Hasta",
+  "applyFilter": "Aplicar",
+  "clearFilter": "Limpiar filtro",
+  "incidentReport": "Incidencia",
+  "incidentDialogTitle": "Reportar incidencia",
+  "incidentReason": "Motivo",
+  "incidentReasonHint": "Describe el motivo de la incidencia (mín. 5 caracteres)",
+  "incidentReasonTooShort": "El motivo debe tener al menos 5 caracteres.",
+  "incidentRequestDate": "Solicitar cambio de fecha (opcional)",
+  "incidentPickDate": "Seleccionar fecha y hora",
+  "incidentClearDate": "Eliminar fecha",
+  "incidentRequestedType": "Tipo solicitado",
+  "incidentSubmit": "Enviar",
+  "incidentSendError": "No se ha podido enviar la incidencia. Inténtalo de nuevo.",
+  "incidentSent": "Incidencia enviada correctamente.",
+  "incidentPending": "Pendiente",
+  "incidentApproved": "Aprobada",
+  "incidentRejected": "Rechazada",
+  "incidentsTitle": "Incidencias",
+  "incidentsEmpty": "No hay incidencias en este período.",
+  "incidentsLoadError": "No se han podido cargar las incidencias.",
+  "incidentDetailTitle": "Detalle de incidencia",
+  "incidentAffectedRecord": "Fichaje afectado",
+  "incidentRequestedChanges": "Cambios solicitados",
+  "incidentNoChanges": "Sin cambios solicitados.",
+  "incidentCreatedAt": "Creada el",
+  "incidentWorker": "Trabajador",
+  "holidaysEmpty": "No hay vacaciones en este período.",
+  "holidaysLoadError": "No se han podido cargar las vacaciones.",
+  "holidayPending": "Pendiente",
+  "holidayApproved": "Aprobadas",
+  "holidayRejected": "Rechazadas",
+  "holidaysCalendarView": "Vista calendario",
+  "holidaysListView": "Vista lista",
+  "groupByPerson": "Agrupar por persona",
+  "holidaysRequestTitle": "Solicitar vacaciones",
+  "holidaysStart": "Fecha de inicio",
+  "holidaysEnd": "Fecha de fin",
+  "holidaysPickDate": "Seleccionar fecha",
+  "holidaysReason": "Motivo (opcional)",
+  "holidaysReasonHint": "Motivo de la solicitud...",
+  "holidaysSubmit": "Solicitar",
+  "holidaysDatesError": "Selecciona las dos fechas; la de fin no puede ser anterior a la de inicio.",
+  "holidaysRequestSent": "Solicitud enviada correctamente.",
+  "holidaysRequestError": "No se ha podido enviar la solicitud. Inténtalo de nuevo.",
+  "holidaysWorkingDays": "{count, plural, =1{1 día laborable} other{{count} días laborables}}",
+  "@holidaysWorkingDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "holidaysNaturalDays": "{count, plural, =1{1 natural} other{{count} naturales}}",
+  "@holidaysNaturalDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "holidayDayVacation": "Vacaciones",
+  "holidayDayNational": "Festivo nacional",
+  "holidayDayCompany": "Festivo de empresa",
+  "holidayDayRest": "Descanso semanal",
+  "holidaysApprove": "Aprobar",
+  "holidaysReject": "Rechazar",
+  "holidaysCancelRequest": "Cancelar solicitud",
+  "holidaysCancelTitle": "Cancelar solicitud",
+  "holidaysCancelMessage": "¿Seguro que quieres cancelar esta solicitud de vacaciones?",
+  "holidaysCancelNo": "No",
+  "holidaysCancelYes": "Sí, cancelar",
+  "holidaysApprovedMessage": "Vacaciones aprobadas.",
+  "holidaysRejectedMessage": "Vacaciones rechazadas.",
+  "holidaysCancelledMessage": "Solicitud cancelada.",
+  "holidaysActionError": "No se ha podido completar la acción. Inténtalo de nuevo.",
+  "holidaysSummary": "Vacaciones {year}: {used}/{total} días",
+  "@holidaysSummary": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      },
+      "used": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "holidaysSummaryWorker": "Trabajador: {count} días",
+  "@holidaysSummaryWorker": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "holidaysSummaryCompany": "Empresa: {count} días",
+  "@holidaysSummaryCompany": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "holidayByWorker": "Solicitado por trabajador",
+  "holidayByCompany": "Asignado por empresa",
+  "holidaysOnDay": "Vacaciones el {date}",
+  "@holidaysOnDay": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  }
+}

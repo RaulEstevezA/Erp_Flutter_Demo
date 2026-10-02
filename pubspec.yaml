@@ -1,0 +1,49 @@
+name: erp_flutter_demo
+description: "ERP Flutter — app de demostración de gestión de personal en movilidad."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  http: ^1.6.0
+  intl: ^0.20.2
+  shared_preferences: ^2.5.5
+  url_launcher: ^6.3.2
+  package_info_plus: ^8.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  image_path: "assets/branding/app_icon.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  adaptive_icon_background: "#4F46E5"
+  adaptive_icon_foreground: "assets/branding/app_icon_foreground.png"
+  web:
+    generate: true
+    image_path: "assets/branding/app_icon.png"
+    background_color: "#4F46E5"
+    theme_color: "#4F46E5"
+  macos:
+    generate: true
+    image_path: "assets/branding/app_icon.png"
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    # El backend estático se empaqueta también dentro de la app para el
+    # modo "demo" (sin red). Es exactamente el mismo contenido que se
+    # publica en GitHub Pages.
+    - backend/api/
