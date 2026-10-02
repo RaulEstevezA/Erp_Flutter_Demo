@@ -312,6 +312,9 @@ class _MemoryStorage implements AttachmentStorage {
   Future<void> delete(String key) async => files.remove(key);
 
   @override
+  Future<void> clear() async => files.clear();
+
+  @override
   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 
@@ -336,6 +339,27 @@ void filesTests() {
 
     await s.workReports.deleteFile(report.id, image);
     expect((await s.workReports.getFiles(report.id)).any((f) => f.id == image.id), isFalse);
+  });
+
+  test('restablecer la demo borra lo añadido y mantiene la sesión', () async {
+    final (s, storage) = await loggedIn('trabajador@erpflutter.dev');
+    final report = (await s.workReports.getReports(filter: WorkReportFilter.active)).items.first;
+    final before = await s.workReports.getReport(report.id);
+
+    await s.workReports.addLine(report.id, concept: 'Extra', units: 1, price: 10);
+    await s.workReports.saveSignature(report.id, [
+      [const Offset(0.1, 0.5), const Offset(0.9, 0.5)],
+    ]);
+    await s.workReports.addFile(report.id,
+        name: 'foto.jpg', bytes: Uint8List.fromList([1]), type: WorkReportFileType.image);
+
+    await s.resetDemoData();
+
+    final after = await s.workReports.getReport(report.id);
+    expect(after.lines, hasLength(before.lines.length));
+    expect(after.isSigned, before.isSigned);
+    expect(storage.files, isEmpty);
+    expect(s.session.user, isNotNull);
   });
 
   test('adjuntar y borrar un archivo propio; límite de 10 MB', () async {

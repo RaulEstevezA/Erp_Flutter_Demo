@@ -19,6 +19,7 @@ class AppDrawer extends StatelessWidget {
   final ValueChanged<AppSection> onSelect;
   final VoidCallback onToggleTheme;
   final VoidCallback onLogout;
+  final VoidCallback onResetDemo;
 
   const AppDrawer({
     super.key,
@@ -29,6 +30,7 @@ class AppDrawer extends StatelessWidget {
     required this.onSelect,
     required this.onToggleTheme,
     required this.onLogout,
+    required this.onResetDemo,
     this.unreadMessages = 0,
   });
 
@@ -72,6 +74,14 @@ class AppDrawer extends StatelessWidget {
                   ),
                   title: Text(isDark ? l10n.settingsLightMode : l10n.settingsDarkMode),
                   onTap: onToggleTheme,
+                ),
+                ListTile(
+                  leading: const Icon(Icons.restart_alt),
+                  title: Text(l10n.menuResetDemo),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    onResetDemo();
+                  },
                 ),
                 ListTile(
                   leading: const Icon(Icons.logout),

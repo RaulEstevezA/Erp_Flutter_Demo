@@ -375,5 +375,10 @@
   "workReportsAddLineDurationRequired": "Indica los minutos",
   "workReportsEditLineTitle": "Editar línea",
   "workReportsEditLineSuccess": "Línea actualizada",
-  "workReportsEditLineError": "No se ha podido actualizar la línea"
+  "workReportsEditLineError": "No se ha podido actualizar la línea",
+  "menuResetDemo": "Restablecer datos de la demo",
+  "resetDemoTitle": "Restablecer datos",
+  "resetDemoMessage": "Se borrarán los fichajes, líneas, firmas, archivos, visitas y mensajes que hayas añadido en este dispositivo y la demo volverá a su estado inicial.",
+  "resetDemoConfirm": "Restablecer",
+  "resetDemoDone": "Datos de la demo restablecidos"
 }

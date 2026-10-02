@@ -930,4 +930,20 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get workReportsEditLineError => 'No se ha podido actualizar la línea';
+
+  @override
+  String get menuResetDemo => 'Restablecer datos de la demo';
+
+  @override
+  String get resetDemoTitle => 'Restablecer datos';
+
+  @override
+  String get resetDemoMessage =>
+      'Se borrarán los fichajes, líneas, firmas, archivos, visitas y mensajes que hayas añadido en este dispositivo y la demo volverá a su estado inicial.';
+
+  @override
+  String get resetDemoConfirm => 'Restablecer';
+
+  @override
+  String get resetDemoDone => 'Datos de la demo restablecidos';
 }

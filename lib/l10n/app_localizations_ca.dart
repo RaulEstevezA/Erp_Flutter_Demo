@@ -931,6 +931,22 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get workReportsEditLineError => 'No s\'ha pogut actualitzar la línia';
+
+  @override
+  String get menuResetDemo => 'Restableix les dades de la demo';
+
+  @override
+  String get resetDemoTitle => 'Restableix les dades';
+
+  @override
+  String get resetDemoMessage =>
+      'S\'esborraran els fitxatges, línies, signatures, fitxers, visites i missatges que hages afegit en aquest dispositiu i la demo tornarà al seu estat inicial.';
+
+  @override
+  String get resetDemoConfirm => 'Restableix';
+
+  @override
+  String get resetDemoDone => 'Dades de la demo restablides';
 }
 
 /// The translations for Catalan Valencian, as used in Spain (`ca_ES`).
@@ -1118,4 +1134,8 @@ class AppLocalizationsCaEs extends AppLocalizationsCa {
 
   @override
   String get workReportsAddLinePriceInvalid => 'Introduïx un preu vàlid';
+
+  @override
+  String get resetDemoMessage =>
+      'S\'esborraran els fitxatges, línies, firmes, fitxers, visites i missatges que hages afegit en este dispositiu i la demo tornarà al seu estat inicial.';
 }

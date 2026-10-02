@@ -54,5 +54,6 @@
   "workReportsFilesSaving": "Guardant...",
   "workReportsFilesDeleteConfirmMessage": "Segur que vols eliminar este fitxer?",
   "workReportsFilesMicDenied": "Sense permís per a usar el micròfon",
-  "workReportsAddLinePriceInvalid": "Introduïx un preu vàlid"
+  "workReportsAddLinePriceInvalid": "Introduïx un preu vàlid",
+  "resetDemoMessage": "S'esborraran els fitxatges, línies, firmes, fitxers, visites i missatges que hages afegit en este dispositiu i la demo tornarà al seu estat inicial."
 }

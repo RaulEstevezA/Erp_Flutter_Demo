@@ -285,5 +285,10 @@
   "workReportsAddLineDurationRequired": "Enter the minutes",
   "workReportsEditLineTitle": "Edit line",
   "workReportsEditLineSuccess": "Line updated",
-  "workReportsEditLineError": "Could not update the line"
+  "workReportsEditLineError": "Could not update the line",
+  "menuResetDemo": "Reset demo data",
+  "resetDemoTitle": "Reset data",
+  "resetDemoMessage": "Clock-ins, lines, signatures, files, visits and messages you added on this device will be deleted and the demo will go back to its initial state.",
+  "resetDemoConfirm": "Reset",
+  "resetDemoDone": "Demo data reset"
 }

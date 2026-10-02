@@ -285,5 +285,10 @@
   "workReportsAddLineDurationRequired": "Indica els minuts",
   "workReportsEditLineTitle": "Edita la línia",
   "workReportsEditLineSuccess": "Línia actualitzada",
-  "workReportsEditLineError": "No s'ha pogut actualitzar la línia"
+  "workReportsEditLineError": "No s'ha pogut actualitzar la línia",
+  "menuResetDemo": "Restableix les dades de la demo",
+  "resetDemoTitle": "Restableix les dades",
+  "resetDemoMessage": "S'esborraran els fitxatges, línies, signatures, fitxers, visites i missatges que hages afegit en aquest dispositiu i la demo tornarà al seu estat inicial.",
+  "resetDemoConfirm": "Restableix",
+  "resetDemoDone": "Dades de la demo restablides"
 }

@@ -41,6 +41,13 @@ class _FileAttachmentStorage implements AttachmentStorage {
   }
 
   @override
+  Future<void> clear() async {
+    final folder = await _folder();
+    if (await folder.exists()) await folder.delete(recursive: true);
+    _dir = null;
+  }
+
+  @override
   Future<Source> audioSource(String key) async => DeviceFileSource((await _file(key)).path);
 
   @override

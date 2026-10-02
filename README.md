@@ -41,6 +41,7 @@ La mensajería es un chat abierto: cualquier usuario puede escribir a cualquier 
 | Partes de visita (gestión): elegir empresa, visitas por mes/rango/búsqueda, detalle y alta con técnicos | ✅ |
 | Partes de trabajo: activos/finalizados, búsqueda, fechas, agrupar por empresa (gestión), detalle, añadir líneas con productos y precio de catálogo editable, editar cualquier línea (el precio de catálogo del producto no cambia), total del parte, firma del cliente. El trabajador solo ve sus partes | ✅ |
 | Archivos de los partes: fotos (cámara/galería), notas de voz (grabar/reproducir), eliminar, máx. 10 MB | ✅ |
+| Restablecer datos de la demo (menú lateral) | ✅ |
 
 ## Backend estático
 
@@ -69,7 +70,16 @@ backend/
 - En mensajería, al enviar un mensaje el destinatario "contesta" a los pocos segundos con una respuesta de `auto_replies`; el sondeo periódico del chat la recoge como un mensaje real.
 - Como el servidor es de solo lectura, lo que en una API real sería un `POST` (fichar, crear incidencias, solicitar o aprobar vacaciones, enviar mensajes, crear visitas, añadir líneas, firmar partes, adjuntar archivos) se guarda en el dispositivo y se mezcla con los datos del servidor.
 
-**Publicar en GitHub Pages:** el workflow [`.github/workflows/backend-pages.yml`](.github/workflows/backend-pages.yml) publica la carpeta `backend/` cada vez que se hace push a `main` con cambios en ella (o a mano desde la pestaña Actions). Hay que activarlo una vez en *Settings → Pages → Source: GitHub Actions*. Después se escribe en la app la URL `https://raulesteveza.github.io/Erp_Flutter_Demo`; la app pide `<url>/api/<recurso>.json`.
+**Despliegue:** el workflow [`.github/workflows/deploy-demo.yml`](.github/workflows/deploy-demo.yml) compila la app web y la publica en la web personal ([raulesteveza.github.io/demos/ERP_Flutter](https://raulesteveza.github.io/demos/ERP_Flutter/)) junto al backend:
+
+| Ruta | Contenido |
+|---|---|
+| `demos/ERP_Flutter/` | Página de presentación con la app en un marco de móvil (`showcase/`) |
+| `demos/ERP_Flutter/app/` | App Flutter compilada para web |
+| `demos/ERP_Flutter/api/` | Backend estático (JSON) |
+| `demos/ERP_Flutter/backend.html` | Portada del backend |
+
+Necesita el secreto de Actions `PORTFOLIO_DEPLOY_TOKEN` (token con escritura sobre `RaulEstevezA.github.io`). Para usar ese backend desde la app móvil, escribe como servidor `https://raulesteveza.github.io/demos/ERP_Flutter`.
 
 ## Arquitectura
 

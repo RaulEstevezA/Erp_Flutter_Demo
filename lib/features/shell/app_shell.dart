@@ -134,6 +134,28 @@ class _AppShellState extends State<AppShell> {
     setState(() => _section = section);
   }
 
+  Future<void> _resetDemo() async {
+    final l10n = AppLocalizations.of(context);
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.resetDemoTitle),
+        content: Text(l10n.resetDemoMessage),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context, false), child: Text(l10n.dialogCancel)),
+          FilledButton(onPressed: () => Navigator.pop(context, true), child: Text(l10n.resetDemoConfirm)),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+    await widget.services.resetDemoData();
+    if (!mounted) return;
+    _select(AppSection.home);
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text(l10n.resetDemoDone)));
+  }
+
   /// Desde el botón flotante del inicio el listado se apila sobre el shell.
   Future<void> _pushConversations() async {
     await Navigator.of(context).push(
@@ -264,6 +286,7 @@ class _AppShellState extends State<AppShell> {
               onSelect: _select,
               onToggleTheme: settings.toggleTheme,
               onLogout: widget.onLogout,
+              onResetDemo: _resetDemo,
               unreadMessages: _messaging.unreadCount,
             ),
             body: Stack(

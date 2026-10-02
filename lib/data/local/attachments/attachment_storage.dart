@@ -21,6 +21,9 @@ abstract class AttachmentStorage {
 
   Future<void> delete(String key);
 
+  /// Borra todos los adjuntos (al restablecer los datos de la demo).
+  Future<void> clear();
+
   /// Origen reproducible de un audio guardado.
   Future<Source> audioSource(String key);
 

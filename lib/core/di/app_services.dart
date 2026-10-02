@@ -45,6 +45,14 @@ class AppServices {
   });
 
   /// [attachments] permite sustituir el almacenamiento de archivos en tests.
+  /// Vuelve la demo al estado inicial: borra fichajes, líneas, firmas,
+  /// mensajes, visitas y adjuntos guardados en el dispositivo. La sesión,
+  /// el idioma y el tema se mantienen.
+  Future<void> resetDemoData() async {
+    await localChanges.reset();
+    await workReports.attachments.clear();
+  }
+
   static Future<AppServices> create({AttachmentStorage? attachments}) async {
     final prefs = await SharedPreferences.getInstance();
     final session = SessionStore(prefs);

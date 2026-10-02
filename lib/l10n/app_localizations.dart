@@ -1816,6 +1816,36 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'No se ha podido actualizar la línea'**
   String get workReportsEditLineError;
+
+  /// No description provided for @menuResetDemo.
+  ///
+  /// In es, this message translates to:
+  /// **'Restablecer datos de la demo'**
+  String get menuResetDemo;
+
+  /// No description provided for @resetDemoTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Restablecer datos'**
+  String get resetDemoTitle;
+
+  /// No description provided for @resetDemoMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Se borrarán los fichajes, líneas, firmas, archivos, visitas y mensajes que hayas añadido en este dispositivo y la demo volverá a su estado inicial.'**
+  String get resetDemoMessage;
+
+  /// No description provided for @resetDemoConfirm.
+  ///
+  /// In es, this message translates to:
+  /// **'Restablecer'**
+  String get resetDemoConfirm;
+
+  /// No description provided for @resetDemoDone.
+  ///
+  /// In es, this message translates to:
+  /// **'Datos de la demo restablecidos'**
+  String get resetDemoDone;
 }
 
 class _AppLocalizationsDelegate

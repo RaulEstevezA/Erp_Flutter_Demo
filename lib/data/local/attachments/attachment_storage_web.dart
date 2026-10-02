@@ -36,6 +36,13 @@ class _PrefsAttachmentStorage implements AttachmentStorage {
   Future<void> delete(String key) => _prefs.remove('$_prefix$key');
 
   @override
+  Future<void> clear() async {
+    for (final key in _prefs.getKeys().where((k) => k.startsWith(_prefix)).toList()) {
+      await _prefs.remove(key);
+    }
+  }
+
+  @override
   Future<Source> audioSource(String key) async {
     final raw = _prefs.getString('$_prefix$key') ?? '';
     return UrlSource('data:${_mime(key)};base64,$raw');
