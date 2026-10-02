@@ -841,4 +841,93 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get workReportsButtonResign => 'Volver a firmar';
+
+  @override
+  String get workReportsFilesEmpty => 'No hay archivos adjuntos';
+
+  @override
+  String get workReportsFilesErrorLoad =>
+      'No se han podido cargar los archivos';
+
+  @override
+  String get workReportsFilesCamera => 'Cámara';
+
+  @override
+  String get workReportsFilesGallery => 'Galería';
+
+  @override
+  String get workReportsFilesRecordAudio => 'Grabar audio';
+
+  @override
+  String get workReportsFilesStopRecord => 'Parar';
+
+  @override
+  String get workReportsFilesRecording => 'Grabando...';
+
+  @override
+  String get workReportsFilesSaving => 'Guardando...';
+
+  @override
+  String get workReportsFilesDelete => 'Eliminar';
+
+  @override
+  String get workReportsFilesDeleteConfirmTitle => 'Eliminar archivo';
+
+  @override
+  String get workReportsFilesDeleteConfirmMessage =>
+      '¿Seguro que quieres eliminar este archivo?';
+
+  @override
+  String get workReportsFilesUploadError => 'No se ha podido subir el archivo';
+
+  @override
+  String get workReportsFilesDeleteError =>
+      'No se ha podido eliminar el archivo';
+
+  @override
+  String get workReportsFilesMicDenied => 'Sin permiso para usar el micrófono';
+
+  @override
+  String get workReportsFilesMaxSizeHint => 'Máx. 10 MB por archivo';
+
+  @override
+  String get workReportsFilesMaxSizeErrorTitle => 'Archivo demasiado grande';
+
+  @override
+  String get workReportsFilesMaxSizeErrorMessage =>
+      'El archivo seleccionado supera el límite de 10 MB. Por favor, elige un archivo más pequeño.';
+
+  @override
+  String get workReportsAddLinePrice => 'Precio unitario (€)';
+
+  @override
+  String get workReportsAddLinePriceInvalid => 'Introduce un precio válido';
+
+  @override
+  String get workReportsLinePrice => 'Precio';
+
+  @override
+  String get workReportsLineAmount => 'Importe';
+
+  @override
+  String get workReportsLinesTotal => 'Total del parte';
+
+  @override
+  String get workReportsLineHours => 'Horas';
+
+  @override
+  String get workReportsAddLineHoursHelper =>
+      'Por horas: se calcula con la duración';
+
+  @override
+  String get workReportsAddLineDurationRequired => 'Indica los minutos';
+
+  @override
+  String get workReportsEditLineTitle => 'Editar línea';
+
+  @override
+  String get workReportsEditLineSuccess => 'Línea actualizada';
+
+  @override
+  String get workReportsEditLineError => 'No se ha podido actualizar la línea';
 }

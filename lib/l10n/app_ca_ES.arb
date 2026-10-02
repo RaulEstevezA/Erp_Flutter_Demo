@@ -47,5 +47,12 @@
   "workReportsSignatureSuccess": "Firma guardada correctament",
   "workReportsSignatureError": "No s'ha pogut guardar la firma",
   "workReportsViewSignatureTitle": "Firma guardada",
-  "workReportsButtonResign": "Torna a firmar"
+  "workReportsButtonResign": "Torna a firmar",
+  "workReportsFilesRecordAudio": "Grava àudio",
+  "workReportsFilesStopRecord": "Para",
+  "workReportsFilesRecording": "Gravant...",
+  "workReportsFilesSaving": "Guardant...",
+  "workReportsFilesDeleteConfirmMessage": "Segur que vols eliminar este fitxer?",
+  "workReportsFilesMicDenied": "Sense permís per a usar el micròfon",
+  "workReportsAddLinePriceInvalid": "Introduïx un preu vàlid"
 }

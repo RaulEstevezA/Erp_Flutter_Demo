@@ -21,28 +21,41 @@
      "product_id": 6,
      "concept": "Switch 24 puertos",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 1,
+     "name": "foto_pt-00001.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 2,
@@ -64,13 +77,15 @@
      "product_id": 14,
      "concept": "Cámara IP exterior",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 89.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
    "signature": [
@@ -368,7 +383,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 3,
@@ -390,10 +406,20 @@
      "product_id": 7,
      "concept": "Punto de acceso Wi-Fi",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 119.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 2,
+     "name": "foto_pt-00003.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 4,
@@ -413,24 +439,36 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     },
     {
      "product_id": 8,
      "concept": "Router empresarial",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 120
+     "units": 1,
+     "duration": 120,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 3,
+     "name": "foto_pt-00004.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 5,
@@ -451,16 +489,19 @@
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 6,
@@ -482,25 +523,29 @@
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     },
     {
      "product_id": 6,
      "concept": "Switch 24 puertos",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
    "signature": [
@@ -798,6 +843,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 4,
+     "name": "nota_pt-00006.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -818,18 +872,36 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 120
+     "concept": "Mano de obra técnico (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 30
+     "units": 1,
+     "duration": 30,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 5,
+     "name": "foto_pt-00007.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 6,
+     "name": "nota_pt-00007.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 8,
@@ -850,8 +922,9 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 30
+     "units": 1,
+     "duration": 30,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -1149,6 +1222,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 7,
+     "name": "foto_pt-00008.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
    ]
   },
   {
@@ -1169,15 +1251,17 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 60
+     "units": 1,
+     "duration": 60,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -1475,6 +1559,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 8,
+     "name": "foto_pt-00009.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 9,
+     "name": "nota_pt-00009.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -1496,19 +1596,22 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 6,
      "concept": "Switch 24 puertos",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     }
    ],
    "signature": [
@@ -1920,6 +2023,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 10,
+     "name": "foto_pt-00010.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
    ]
   },
   {
@@ -1942,7 +2054,8 @@
      "product_id": 11,
      "concept": "Diferencial 40 A",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 42.0
     }
    ],
    "signature": [
@@ -2354,6 +2467,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 11,
+     "name": "foto_pt-00011.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    },
+    {
+     "id": 12,
+     "name": "nota_pt-00011.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -2373,15 +2502,17 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 30
+     "concept": "Mano de obra oficial (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 28.0
     },
     {
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     }
    ],
    "signature": [
@@ -2793,7 +2924,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 13,
@@ -2815,13 +2947,15 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -3233,6 +3367,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 13,
+     "name": "foto_pt-00013.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 14,
+     "name": "nota_pt-00013.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -3255,7 +3405,8 @@
      "product_id": 13,
      "concept": "SAI 1000 VA",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 145.0
     }
    ],
    "signature": [
@@ -3667,6 +3818,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 15,
+     "name": "foto_pt-00014.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    },
+    {
+     "id": 16,
+     "name": "nota_pt-00014.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -3686,18 +3853,29 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 28.0
     },
     {
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 17,
+     "name": "foto_pt-00015.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    }
+   ]
   },
   {
    "id": 16,
@@ -3719,16 +3897,27 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 28.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 18,
+     "name": "foto_pt-00016.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    }
+   ]
   },
   {
    "id": 17,
@@ -3750,13 +3939,15 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 14,
      "concept": "Cámara IP exterior",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 89.0
     }
    ],
    "signature": [
@@ -4168,6 +4359,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 19,
+     "name": "nota_pt-00017.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -4187,18 +4387,21 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 3,
-     "duration": 60
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 28.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 60
+     "duration": 60,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 19,
@@ -4220,22 +4423,34 @@
      "product_id": 8,
      "concept": "Router empresarial",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 90
+     "duration": 90,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 20,
+     "name": "foto_pt-00019.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 20,
@@ -4255,21 +4470,24 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     }
    ],
    "signature": [
@@ -4681,6 +4899,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 21,
+     "name": "foto_pt-00020.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 22,
+     "name": "nota_pt-00020.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -4703,13 +4937,15 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 120
+     "concept": "Mano de obra oficial (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -5007,6 +5243,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 23,
+     "name": "foto_pt-00021.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    }
    ]
   },
   {
@@ -5029,25 +5274,29 @@
      "product_id": 11,
      "concept": "Diferencial 40 A",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 42.0
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     },
     {
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 120
+     "units": 1,
+     "duration": 120,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -5345,7 +5594,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 23,
@@ -5365,15 +5615,17 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 120
+     "concept": "Mano de obra técnico (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 60
+     "duration": 60,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -5671,7 +5923,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 24,
@@ -5692,13 +5945,15 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -5996,6 +6251,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 24,
+     "name": "foto_pt-00024.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    }
    ]
   },
   {
@@ -6016,15 +6280,17 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 30
+     "units": 1,
+     "duration": 30,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -6322,7 +6588,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 26,
@@ -6344,7 +6611,8 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     }
    ],
    "signature": [
@@ -6756,6 +7024,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 25,
+     "name": "foto_pt-00026.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    }
    ]
   },
   {
@@ -6777,19 +7054,22 @@
      "product_id": 8,
      "concept": "Router empresarial",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 90
+     "units": 1,
+     "duration": 90,
+     "price": 18.5
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -7201,6 +7481,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 26,
+     "name": "foto_pt-00027.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 27,
+     "name": "nota_pt-00027.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -7220,15 +7516,17 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
    "signature": [
@@ -7640,6 +7938,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 28,
+     "name": "foto_pt-00028.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 29,
+     "name": "nota_pt-00028.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -7662,13 +7976,15 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 120
+     "concept": "Mano de obra oficial (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -8080,6 +8396,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 30,
+     "name": "foto_pt-00029.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    },
+    {
+     "id": 31,
+     "name": "nota_pt-00029.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -8102,13 +8434,15 @@
      "product_id": 13,
      "concept": "SAI 1000 VA",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 145.0
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -8406,6 +8740,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 32,
+     "name": "nota_pt-00030.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -8427,13 +8770,15 @@
      "product_id": 13,
      "concept": "SAI 1000 VA",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 145.0
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -8845,6 +9190,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 33,
+     "name": "foto_pt-00031.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    },
+    {
+     "id": 34,
+     "name": "nota_pt-00031.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -8865,8 +9226,9 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 60
+     "units": 1,
+     "duration": 60,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -9164,6 +9526,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 35,
+     "name": "foto_pt-00032.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
    ]
   },
   {
@@ -9184,9 +9555,10 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 30
+     "concept": "Mano de obra oficial (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -9484,6 +9856,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 36,
+     "name": "foto_pt-00033.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    },
+    {
+     "id": 37,
+     "name": "nota_pt-00033.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -9506,19 +9894,22 @@
      "product_id": 8,
      "concept": "Router empresarial",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 30
+     "duration": 30,
+     "price": 18.5
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 120
+     "concept": "Mano de obra técnico (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -9816,6 +10207,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 38,
+     "name": "foto_pt-00034.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 39,
+     "name": "nota_pt-00034.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -9837,7 +10244,8 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
    "signature": [
@@ -10135,7 +10543,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 36,
@@ -10156,8 +10565,9 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 90
+     "units": 1,
+     "duration": 90,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -10569,7 +10979,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 37,
@@ -10589,14 +11000,16 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 120
+     "units": 1,
+     "duration": 120,
+     "price": 18.5
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -10894,7 +11307,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 38,
@@ -10916,7 +11330,8 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
    "signature": [
@@ -11328,7 +11743,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 39,
@@ -11347,24 +11763,28 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 14,
      "concept": "Cámara IP exterior",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 89.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 40,
@@ -11385,22 +11805,34 @@
      "product_id": 7,
      "concept": "Punto de acceso Wi-Fi",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 119.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 40,
+     "name": "foto_pt-00040.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 41,
@@ -11421,13 +11853,15 @@
      "product_id": 6,
      "concept": "Switch 24 puertos",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     }
    ],
    "signature": [
@@ -11725,6 +12159,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 41,
+     "name": "foto_pt-00041.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 42,
+     "name": "nota_pt-00041.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -11747,19 +12197,22 @@
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 60
+     "duration": 60,
+     "price": 18.5
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     },
     {
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     }
    ],
    "signature": [
@@ -12171,7 +12624,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 43,
@@ -12193,13 +12647,15 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -12497,6 +12953,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 43,
+     "name": "foto_pt-00043.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    }
    ]
   },
   {
@@ -12516,9 +12981,10 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -12816,6 +13282,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 44,
+     "name": "foto_pt-00044.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
    ]
   },
   {
@@ -12838,25 +13313,29 @@
      "product_id": 11,
      "concept": "Diferencial 40 A",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 42.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 120
+     "units": 1,
+     "duration": 120,
+     "price": 18.5
     },
     {
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 2,
-     "duration": 60
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -13268,6 +13747,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 45,
+     "name": "foto_pt-00045.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    },
+    {
+     "id": 46,
+     "name": "nota_pt-00045.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -13288,12 +13783,22 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 47,
+     "name": "nota_pt-00046.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 47,
@@ -13315,7 +13820,8 @@
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     }
    ],
    "signature": [
@@ -13613,7 +14119,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 48,
@@ -13634,13 +14141,15 @@
      "product_id": 8,
      "concept": "Router empresarial",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     }
    ],
    "signature": [
@@ -13938,6 +14447,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 48,
+     "name": "foto_pt-00048.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
    ]
   },
   {
@@ -13958,12 +14476,22 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 49,
+     "name": "foto_pt-00049.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
+   ]
   },
   {
    "id": 50,
@@ -13984,7 +14512,8 @@
      "product_id": 8,
      "concept": "Router empresarial",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     }
    ],
    "signature": [
@@ -14396,6 +14925,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 50,
+     "name": "foto_pt-00050.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
    ]
   },
   {
@@ -14417,17 +14955,20 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 30
+     "units": 1,
+     "duration": 30,
+     "price": 18.5
     },
     {
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 52,
@@ -14448,7 +14989,8 @@
      "product_id": 6,
      "concept": "Switch 24 puertos",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     }
    ],
    "signature": [
@@ -14746,7 +15288,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 53,
@@ -14767,19 +15310,22 @@
      "product_id": 6,
      "concept": "Switch 24 puertos",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     }
    ],
    "signature": [
@@ -15077,6 +15623,22 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 51,
+     "name": "foto_pt-00053.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 52,
+     "name": "nota_pt-00053.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -15096,21 +15658,24 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 90
+     "units": 1,
+     "duration": 90,
+     "price": 18.5
     },
     {
      "product_id": 8,
      "concept": "Router empresarial",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     }
    ],
    "signature": [
@@ -15408,6 +15973,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 53,
+     "name": "foto_pt-00054.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
    ]
   },
   {
@@ -15428,12 +16002,22 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 54,
+     "name": "nota_pt-00055.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 56,
@@ -15455,13 +16039,15 @@
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
    "signature": [
@@ -15759,7 +16345,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 57,
@@ -15779,15 +16366,17 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 90
+     "units": 1,
+     "duration": 90,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -16199,6 +16788,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 55,
+     "name": "foto_pt-00057.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
    ]
   },
   {
@@ -16218,24 +16816,36 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 2,
-     "duration": 30
+     "concept": "Mano de obra oficial (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 28.0
     },
     {
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 90
+     "units": 1,
+     "duration": 90,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 56,
+     "name": "foto_pt-00058.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
+   ]
   },
   {
    "id": 59,
@@ -16257,19 +16867,22 @@
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 60
+     "units": 1,
+     "duration": 60,
+     "price": 18.5
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra oficial (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -16681,6 +17294,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 57,
+     "name": "nota_pt-00059.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -16700,18 +17322,29 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 58,
+     "name": "foto_pt-00060.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 61,
@@ -16733,22 +17366,34 @@
      "product_id": 5,
      "concept": "Conector RJ45",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 0.6
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 120
+     "concept": "Mano de obra técnico (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 59,
+     "name": "foto_pt-00061.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 62,
@@ -16767,24 +17412,28 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     },
     {
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 30
+     "duration": 30,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 63,
@@ -16806,13 +17455,15 @@
      "product_id": 11,
      "concept": "Diferencial 40 A",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 42.0
     },
     {
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     }
    ],
    "signature": [
@@ -17224,6 +17875,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 60,
+     "name": "nota_pt-00063.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -17242,7 +17902,8 @@
     8
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 65,
@@ -17260,7 +17921,8 @@
     8
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 66,
@@ -17277,7 +17939,8 @@
     5
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 67,
@@ -17298,10 +17961,12 @@
      "product_id": 13,
      "concept": "SAI 1000 VA",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 145.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 68,
@@ -17318,7 +17983,8 @@
     7
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 69,
@@ -17336,7 +18002,8 @@
     6
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 70,
@@ -17358,16 +18025,34 @@
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 60
+     "duration": 60,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 61,
+     "name": "foto_pt-00070.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    },
+    {
+     "id": 62,
+     "name": "nota_pt-00070.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 71,
@@ -17384,7 +18069,8 @@
     4
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 72,
@@ -17402,7 +18088,8 @@
     7
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 73,
@@ -17420,7 +18107,8 @@
     9
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 74,
@@ -17437,7 +18125,8 @@
     8
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 75,
@@ -17457,12 +18146,22 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 63,
+     "name": "foto_pt-00075.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 76,
@@ -17481,12 +18180,22 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 120
+     "concept": "Mano de obra técnico (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 64,
+     "name": "foto_pt-00076.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 77,
@@ -17506,18 +18215,36 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 120
+     "duration": 120,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 65,
+     "name": "foto_pt-00077.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 66,
+     "name": "nota_pt-00077.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 78,
@@ -17537,18 +18264,21 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     },
     {
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 79,
@@ -17569,22 +18299,41 @@
      "product_id": 7,
      "concept": "Punto de acceso Wi-Fi",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 119.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 67,
+     "name": "foto_pt-00079.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 68,
+     "name": "nota_pt-00079.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 80,
@@ -17603,12 +18352,14 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 81,
@@ -17630,16 +18381,27 @@
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 120
+     "duration": 120,
+     "price": 18.5
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 69,
+     "name": "nota_pt-00081.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 82,
@@ -17661,22 +18423,26 @@
      "product_id": 7,
      "concept": "Punto de acceso Wi-Fi",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 119.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 83,
@@ -17697,16 +18463,27 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 120
+     "concept": "Mano de obra técnico (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 70,
+     "name": "nota_pt-00083.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 84,
@@ -17723,7 +18500,8 @@
     9
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 85,
@@ -17741,7 +18519,8 @@
     8
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 86,
@@ -17761,12 +18540,14 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 87,
@@ -17783,7 +18564,8 @@
     5
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 88,
@@ -17802,21 +18584,24 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 28.0
     },
     {
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 60
+     "units": 1,
+     "duration": 60,
+     "price": 18.5
     }
    ],
    "signature": [
@@ -18114,6 +18899,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 71,
+     "name": "nota_pt-00088.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -18135,17 +18929,20 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 30
+     "units": 1,
+     "duration": 30,
+     "price": 18.5
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 90,
@@ -18167,22 +18964,26 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 14,
      "concept": "Cámara IP exterior",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 89.0
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 120
+     "concept": "Mano de obra técnico (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 91,
@@ -18201,12 +19002,14 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 92,
@@ -18227,7 +19030,8 @@
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     }
    ],
    "signature": [
@@ -18639,6 +19443,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 72,
+     "name": "foto_pt-00092.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
    ]
   },
   {
@@ -18661,28 +19474,41 @@
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 120
+     "duration": 120,
+     "price": 18.5
     },
     {
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra oficial (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 28.0
     },
     {
      "product_id": 11,
      "concept": "Diferencial 40 A",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 42.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 73,
+     "name": "foto_pt-00093.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
+   ]
   },
   {
    "id": 94,
@@ -18702,12 +19528,14 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 3,
-     "duration": 120
+     "concept": "Mano de obra oficial (h)",
+     "units": 2.0,
+     "duration": 120,
+     "price": 28.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 95,
@@ -18729,10 +19557,12 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 96,
@@ -18749,7 +19579,8 @@
     9
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 97,
@@ -18770,29 +19601,42 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 3,
-     "duration": 30
+     "units": 1,
+     "duration": 30,
+     "price": 18.5
     },
     {
      "product_id": 11,
      "concept": "Diferencial 40 A",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 42.0
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     },
     {
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 74,
+     "name": "foto_pt-00097.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
+   ]
   },
   {
    "id": 98,
@@ -18813,22 +19657,34 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 7,
      "concept": "Punto de acceso Wi-Fi",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 119.0
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 75,
+     "name": "foto_pt-00098.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    }
+   ]
   },
   {
    "id": 99,
@@ -18850,16 +19706,19 @@
      "product_id": 6,
      "concept": "Switch 24 puertos",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 189.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 100,
@@ -18879,18 +19738,29 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 76,
+     "name": "nota_pt-00100.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 101,
@@ -18911,10 +19781,27 @@
      "product_id": 13,
      "concept": "SAI 1000 VA",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 145.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 77,
+     "name": "foto_pt-00101.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    },
+    {
+     "id": 78,
+     "name": "nota_pt-00101.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 102,
@@ -18931,7 +19818,8 @@
     4
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 103,
@@ -18952,19 +19840,22 @@
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 120
+     "duration": 120,
+     "price": 18.5
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 60
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 28.0
     },
     {
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     }
    ],
    "signature": [
@@ -19376,7 +20267,8 @@
       0.8
      ]
     ]
-   ]
+   ],
+   "files": []
   },
   {
    "id": 104,
@@ -19398,19 +20290,22 @@
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 120
+     "duration": 120,
+     "price": 18.5
     },
     {
      "product_id": 15,
      "concept": "Kit de fontanería",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 46.2
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 2,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     }
    ],
    "signature": [
@@ -19708,6 +20603,15 @@
       0.8
      ]
     ]
+   ],
+   "files": [
+    {
+     "id": 79,
+     "name": "nota_pt-00104.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
    ]
   },
   {
@@ -19729,10 +20633,20 @@
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 90
+     "duration": 90,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 80,
+     "name": "nota_pt-00105.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 106,
@@ -19752,18 +20666,21 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     },
     {
      "product_id": 13,
      "concept": "SAI 1000 VA",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 145.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 107,
@@ -19780,7 +20697,8 @@
     7
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 108,
@@ -19800,18 +20718,21 @@
    "lines": [
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 2,
-     "duration": 30
+     "concept": "Mano de obra técnico (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 32.0
     },
     {
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 109,
@@ -19832,16 +20753,19 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 1,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 14,
      "concept": "Cámara IP exterior",
      "units": 25,
-     "duration": 0
+     "duration": 0,
+     "price": 89.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 110,
@@ -19862,16 +20786,34 @@
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 81,
+     "name": "foto_pt-00110.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    },
+    {
+     "id": 82,
+     "name": "nota_pt-00110.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 111,
@@ -19891,11 +20833,21 @@
     {
      "product_id": 3,
      "concept": "Desplazamiento",
-     "units": 2,
-     "duration": 90
+     "units": 1,
+     "duration": 90,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 83,
+     "name": "nota_pt-00111.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 112,
@@ -19917,28 +20869,41 @@
      "product_id": 10,
      "concept": "Magnetotérmico 16 A",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 9.5
     },
     {
      "product_id": 11,
      "concept": "Diferencial 40 A",
      "units": 4,
-     "duration": 0
+     "duration": 0,
+     "price": 42.0
     },
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     },
     {
      "product_id": 3,
      "concept": "Desplazamiento",
      "units": 1,
-     "duration": 30
+     "duration": 30,
+     "price": 18.5
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 84,
+     "name": "foto_pt-00112.png",
+     "type": "image",
+     "asset": "cuadro_electrico.png",
+     "size": 19563
+    }
+   ]
   },
   {
    "id": 113,
@@ -19955,7 +20920,8 @@
     6
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 114,
@@ -19976,22 +20942,41 @@
      "product_id": 4,
      "concept": "Cable de red Cat6 (m)",
      "units": 10,
-     "duration": 0
+     "duration": 0,
+     "price": 0.85
     },
     {
      "product_id": 1,
-     "concept": "Mano de obra técnico",
-     "units": 3,
-     "duration": 60
+     "concept": "Mano de obra técnico (h)",
+     "units": 1.0,
+     "duration": 60,
+     "price": 32.0
     },
     {
      "product_id": 7,
      "concept": "Punto de acceso Wi-Fi",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 119.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 85,
+     "name": "foto_pt-00114.png",
+     "type": "image",
+     "asset": "rack_red.png",
+     "size": 57542
+    },
+    {
+     "id": 86,
+     "name": "nota_pt-00114.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 115,
@@ -20009,7 +20994,8 @@
     7
    ],
    "lines": [],
-   "signature": null
+   "signature": null,
+   "files": []
   },
   {
    "id": 116,
@@ -20028,18 +21014,36 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 3,
-     "duration": 90
+     "concept": "Mano de obra oficial (h)",
+     "units": 1.5,
+     "duration": 90,
+     "price": 28.0
     },
     {
      "product_id": 9,
      "concept": "Panel LED 60x60",
      "units": 2,
-     "duration": 0
+     "duration": 0,
+     "price": 34.9
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": [
+    {
+     "id": 87,
+     "name": "foto_pt-00116.png",
+     "type": "image",
+     "asset": "paneles_led.png",
+     "size": 51851
+    },
+    {
+     "id": 88,
+     "name": "nota_pt-00116.wav",
+     "type": "audio",
+     "asset": "nota_voz.wav",
+     "size": 89644
+    }
+   ]
   },
   {
    "id": 117,
@@ -20059,12 +21063,14 @@
    "lines": [
     {
      "product_id": 2,
-     "concept": "Mano de obra oficial",
-     "units": 1,
-     "duration": 30
+     "concept": "Mano de obra oficial (h)",
+     "units": 0.5,
+     "duration": 30,
+     "price": 28.0
     }
    ],
-   "signature": null
+   "signature": null,
+   "files": []
   }
  ]
 }

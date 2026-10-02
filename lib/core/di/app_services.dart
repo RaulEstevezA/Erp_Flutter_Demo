@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../data/local/attachments/attachment_storage.dart';
 import '../../data/local/local_changes_store.dart';
 import '../../data/repositories/attendance_repository.dart';
 import '../../data/repositories/auth_repository.dart';
@@ -43,7 +44,8 @@ class AppServices {
     required this.workReports,
   });
 
-  static Future<AppServices> create() async {
+  /// [attachments] permite sustituir el almacenamiento de archivos en tests.
+  static Future<AppServices> create({AttachmentStorage? attachments}) async {
     final prefs = await SharedPreferences.getInstance();
     final session = SessionStore(prefs);
     final api = ApiClient();
@@ -62,7 +64,12 @@ class AppServices {
       messaging: MessagingRepository(api, localChanges, session, users),
       clients: ClientRepository(api, session),
       visits: VisitReportRepository(api, localChanges, session),
-      workReports: WorkReportRepository(api, localChanges, session),
+      workReports: WorkReportRepository(
+        api,
+        localChanges,
+        session,
+        attachments ?? AttachmentStorage(prefs),
+      ),
     );
   }
 }

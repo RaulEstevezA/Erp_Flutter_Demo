@@ -48,7 +48,8 @@ class LocalChangesStore {
   }
 
   int nextId(String collection) {
-    final ids = read(collection).map((e) => e['id'] as int);
+    // Registros sin id numérico (de versiones anteriores) no cuentan.
+    final ids = read(collection).map((e) => e['id']).whereType<int>();
     return ids.isEmpty ? _firstLocalId : ids.reduce((a, b) => a > b ? a : b) + 1;
   }
 

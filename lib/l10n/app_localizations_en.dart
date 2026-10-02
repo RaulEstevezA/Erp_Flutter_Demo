@@ -833,4 +833,91 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get workReportsButtonResign => 'Sign again';
+
+  @override
+  String get workReportsFilesEmpty => 'No attached files';
+
+  @override
+  String get workReportsFilesErrorLoad => 'Could not load files';
+
+  @override
+  String get workReportsFilesCamera => 'Camera';
+
+  @override
+  String get workReportsFilesGallery => 'Gallery';
+
+  @override
+  String get workReportsFilesRecordAudio => 'Record audio';
+
+  @override
+  String get workReportsFilesStopRecord => 'Stop';
+
+  @override
+  String get workReportsFilesRecording => 'Recording...';
+
+  @override
+  String get workReportsFilesSaving => 'Saving...';
+
+  @override
+  String get workReportsFilesDelete => 'Delete';
+
+  @override
+  String get workReportsFilesDeleteConfirmTitle => 'Delete file';
+
+  @override
+  String get workReportsFilesDeleteConfirmMessage =>
+      'Are you sure you want to delete this file?';
+
+  @override
+  String get workReportsFilesUploadError => 'Could not upload the file';
+
+  @override
+  String get workReportsFilesDeleteError => 'Could not delete the file';
+
+  @override
+  String get workReportsFilesMicDenied => 'Microphone permission denied';
+
+  @override
+  String get workReportsFilesMaxSizeHint => 'Max. 10 MB per file';
+
+  @override
+  String get workReportsFilesMaxSizeErrorTitle => 'File too large';
+
+  @override
+  String get workReportsFilesMaxSizeErrorMessage =>
+      'The selected file exceeds the 10 MB limit. Please choose a smaller file.';
+
+  @override
+  String get workReportsAddLinePrice => 'Unit price (€)';
+
+  @override
+  String get workReportsAddLinePriceInvalid => 'Enter a valid price';
+
+  @override
+  String get workReportsLinePrice => 'Price';
+
+  @override
+  String get workReportsLineAmount => 'Amount';
+
+  @override
+  String get workReportsLinesTotal => 'Report total';
+
+  @override
+  String get workReportsLineHours => 'Hours';
+
+  @override
+  String get workReportsAddLineHoursHelper =>
+      'Hourly: calculated from the duration';
+
+  @override
+  String get workReportsAddLineDurationRequired => 'Enter the minutes';
+
+  @override
+  String get workReportsEditLineTitle => 'Edit line';
+
+  @override
+  String get workReportsEditLineSuccess => 'Line updated';
+
+  @override
+  String get workReportsEditLineError => 'Could not update the line';
 }

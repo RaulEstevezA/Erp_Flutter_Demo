@@ -11,6 +11,8 @@ import '../../domain/work_reports.dart';
 import '../../l10n/app_localizations.dart';
 import '../clients/client_parts.dart';
 import 'signature_screens.dart';
+import 'work_report_files_screen.dart';
+import 'work_report_files_view_model.dart';
 import 'work_report_style.dart';
 import 'work_report_tile.dart';
 
@@ -62,6 +64,22 @@ class _WorkReportDetailScreenState extends State<WorkReportDetailScreen> {
     _reload();
   }
 
+  Future<void> _editLine(WorkReportLine line) async {
+    final l10n = AppLocalizations.of(context);
+    final saved = await showDialog<bool>(
+      context: context,
+      builder: (_) => _AddLineDialog(
+        repository: widget.repository,
+        reportId: widget.reportId,
+        line: line,
+      ),
+    );
+    if (saved != true || !mounted) return;
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(l10n.workReportsEditLineSuccess)));
+    _reload();
+  }
+
   Future<void> _openSignature(WorkReport report) async {
     final signed = await Navigator.of(context).push<bool>(
       MaterialPageRoute<bool>(
@@ -83,10 +101,14 @@ class _WorkReportDetailScreenState extends State<WorkReportDetailScreen> {
   }
 
   void _openFiles() {
-    final l10n = AppLocalizations.of(context);
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(l10n.comingSoon(l10n.workReportsButtonFiles))));
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => WorkReportFilesScreen(
+          viewModel: WorkReportFilesViewModel(widget.repository, reportId: widget.reportId),
+          onOpenDrawer: widget.onOpenDrawer,
+        ),
+      ),
+    );
   }
 
   @override
@@ -107,7 +129,7 @@ class _WorkReportDetailScreenState extends State<WorkReportDetailScreen> {
             AsyncSnapshot(hasError: true) =>
               LoadErrorView(message: l10n.workReportsErrorLoad, onRetry: _reload),
             AsyncSnapshot(hasData: false) => const Center(child: CircularProgressIndicator()),
-            _ => _Body(report: report!, onAddLine: _addLine),
+            _ => _Body(report: report!, onAddLine: _addLine, onEditLine: _editLine),
           },
           bottomNavigationBar: report == null
               ? null
@@ -154,8 +176,9 @@ class _WorkReportDetailScreenState extends State<WorkReportDetailScreen> {
 class _Body extends StatelessWidget {
   final WorkReport report;
   final VoidCallback onAddLine;
+  final ValueChanged<WorkReportLine> onEditLine;
 
-  const _Body({required this.report, required this.onAddLine});
+  const _Body({required this.report, required this.onAddLine, required this.onEditLine});
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +223,30 @@ class _Body extends StatelessWidget {
         if (report.lines.isEmpty)
           SectionCard(children: [MutedText(l10n.workReportsNoLines)])
         else
-          ...report.lines.map((line) => _LineCard(line: line)),
+          ...report.lines.map(
+            (line) => _LineCard(line: line, onTap: line.editable ? () => onEditLine(line) : null),
+          ),
+        if (report.hasPrices)
+          SectionCard(children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    l10n.workReportsLinesTotal,
+                    style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+                  ),
+                ),
+                Text(
+                  formatMoney(context, report.amount),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 15,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+              ],
+            ),
+          ]),
         const SizedBox(height: 16),
         SectionLabel(l10n.workReportsLabelWorkers),
         SectionCard(children: [
@@ -294,39 +340,82 @@ class _InfoRow extends StatelessWidget {
   }
 }
 
+/// Línea de trabajo. Las añadidas en el dispositivo se editan al tocarlas
+/// (precio, minutos, unidades...); las del servidor solo se consultan.
 class _LineCard extends StatelessWidget {
   final WorkReportLine line;
+  final VoidCallback? onTap;
 
-  const _LineCard({required this.line});
+  const _LineCard({required this.line, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    return SectionCard(
+    final muted = Theme.of(context).colorScheme.onSurfaceVariant;
+    return Card(
       margin: const EdgeInsets.only(bottom: 8),
-      children: [
-        if (line.productRef != null)
-          Text(
-            line.productRef!,
-            style: const TextStyle(
-              color: AppColors.accent,
-              fontSize: 11,
-              fontWeight: FontWeight.w700,
-            ),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: _content(context, l10n, muted),
           ),
+        ),
+      ),
+    );
+  }
+
+  List<Widget> _content(BuildContext context, AppLocalizations l10n, Color muted) {
+    return [
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                line.productRef ?? '',
+                style: const TextStyle(
+                  color: AppColors.accent,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            if (onTap != null) Icon(Icons.edit_outlined, size: 16, color: muted),
+          ],
+        ),
         Text(line.concept, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14)),
         const SizedBox(height: 6),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _LineDetail(label: l10n.workReportsLineUnits, value: formatUnits(context, line.units)),
-            if (line.duration > 0) ...[
-              const SizedBox(width: 16),
-              _LineDetail(label: l10n.workReportsLineDuration, value: formatMinutes(line.duration)),
+            Expanded(
+              child: Wrap(
+                spacing: 16,
+                runSpacing: 4,
+                children: [
+                  _LineDetail(
+                    label: line.hourly ? l10n.workReportsLineHours : l10n.workReportsLineUnits,
+                    value: formatUnits(context, line.units),
+                  ),
+                  if (line.price != null)
+                    _LineDetail(label: l10n.workReportsLinePrice, value: formatMoney(context, line.price!)),
+                  if (line.duration > 0)
+                    _LineDetail(label: l10n.workReportsLineDuration, value: formatMinutes(line.duration)),
+                ],
+              ),
+            ),
+            if (line.total != null) ...[
+              const SizedBox(width: 12),
+              Text(
+                formatMoney(context, line.total!),
+                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+              ),
             ],
           ],
         ),
-      ],
-    );
+    ];
   }
 }
 
@@ -350,13 +439,15 @@ class _LineDetail extends StatelessWidget {
   }
 }
 
-/// Diálogo "Añadir línea": producto opcional (rellena el concepto),
-/// concepto, unidades y duración.
+/// Diálogo "Añadir línea": producto opcional (rellena concepto y precio),
+/// concepto, unidades, duración y precio. Con [line] edita esa línea: el
+/// producto queda fijo y el resto, incluido el precio, se puede cambiar.
 class _AddLineDialog extends StatefulWidget {
   final WorkReportRepository repository;
   final int reportId;
+  final WorkReportLine? line;
 
-  const _AddLineDialog({required this.repository, required this.reportId});
+  const _AddLineDialog({required this.repository, required this.reportId, this.line});
 
   @override
   State<_AddLineDialog> createState() => _AddLineDialogState();
@@ -367,7 +458,63 @@ class _AddLineDialogState extends State<_AddLineDialog> {
   final _concept = TextEditingController();
   final _units = TextEditingController();
   final _duration = TextEditingController();
-  int? _productId;
+  final _price = TextEditingController();
+  Product? _product;
+
+  /// Producto por horas: las unidades se calculan con la duración.
+  bool get _hourly => _product?.hourly ?? false;
+
+  bool get _editing => widget.line != null;
+
+  @override
+  void initState() {
+    super.initState();
+    _duration.addListener(_syncHours);
+    final line = widget.line;
+    if (line != null) {
+      _concept.text = line.concept;
+      _duration.text = line.duration > 0 ? '${line.duration}' : '';
+      if (line.productId != null) _loadProduct(line.productId!);
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Los números se escriben con el separador decimal del idioma.
+    final line = widget.line;
+    if (line != null && _units.text.isEmpty) {
+      _units.text = _decimal(line.units, fixed: false);
+      _price.text = line.price == null ? '' : _decimal(line.price!, fixed: true);
+    }
+  }
+
+  String _decimal(double value, {required bool fixed}) {
+    var text = fixed
+        ? value.toStringAsFixed(2)
+        : (value == value.roundToDouble() ? value.toInt().toString() : '$value');
+    if (Localizations.localeOf(context).languageCode != 'en') text = text.replaceAll('.', ',');
+    return text;
+  }
+
+  Future<void> _loadProduct(int productId) async {
+    final product = (await widget.repository.products()).where((p) => p.id == productId).firstOrNull;
+    if (!mounted || product == null) return;
+    setState(() {
+      _product = product;
+    });
+  }
+
+  void _syncHours() {
+    if (!_hourly) return;
+    final minutes = int.tryParse(_duration.text) ?? 0;
+    final hours = minutes / 60;
+    final english = Localizations.localeOf(context).languageCode == 'en';
+    final text = hours == hours.roundToDouble()
+        ? hours.toInt().toString()
+        : hours.toStringAsFixed(2).replaceAll(RegExp(r'0$'), '');
+    _units.text = minutes == 0 ? '' : (english ? text : text.replaceAll('.', ','));
+  }
   bool _saving = false;
   String? _error;
 
@@ -376,7 +523,41 @@ class _AddLineDialogState extends State<_AddLineDialog> {
     _concept.dispose();
     _units.dispose();
     _duration.dispose();
+    _price.dispose();
     super.dispose();
+  }
+
+  /// Precio escrito por el usuario; vacío = línea sin importe.
+  double? get _parsedPrice {
+    final text = _price.text.trim();
+    return text.isEmpty ? null : double.tryParse(text.replaceAll(',', '.'));
+  }
+
+  /// Elegir producto rellena concepto y precio de catálogo. Después ambos
+  /// se pueden cambiar; el precio no se vuelve a tocar salvo que se elija
+  /// otro producto.
+  Future<void> _pickProduct() async {
+    final product = await showModalBottomSheet<Product>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (_) => _ProductPickerSheet(repository: widget.repository),
+    );
+    if (product == null || !mounted) return;
+    final fixed = product.price.toStringAsFixed(2);
+    final english = Localizations.localeOf(context).languageCode == 'en';
+    setState(() {
+      _product = product;
+      _concept.text = product.concept;
+      _price.text = english ? fixed : fixed.replaceAll('.', ',');
+    });
+    _syncHours();
+  }
+
+  void _clearProduct() {
+    setState(() {
+      _product = null;
+    });
   }
 
   Future<void> _submit() async {
@@ -386,20 +567,34 @@ class _AddLineDialogState extends State<_AddLineDialog> {
       _saving = true;
       _error = null;
     });
+    final units = double.tryParse(_units.text.replaceAll(',', '.')) ?? 0;
+    final duration = int.tryParse(_duration.text) ?? 0;
     try {
-      await widget.repository.addLine(
-        widget.reportId,
-        concept: _concept.text,
-        units: double.parse(_units.text.replaceAll(',', '.')),
-        duration: int.tryParse(_duration.text) ?? 0,
-        productId: _productId,
-      );
+      if (_editing) {
+        await widget.repository.updateLine(
+          widget.reportId,
+          widget.line!.id,
+          concept: _concept.text,
+          units: units,
+          duration: duration,
+          price: _parsedPrice,
+        );
+      } else {
+        await widget.repository.addLine(
+          widget.reportId,
+          concept: _concept.text,
+          units: units,
+          duration: duration,
+          productId: _product?.id,
+          price: _parsedPrice,
+        );
+      }
       if (mounted) Navigator.of(context).pop(true);
     } catch (_) {
       if (!mounted) return;
       setState(() {
         _saving = false;
-        _error = l10n.workReportsAddLineError;
+        _error = _editing ? l10n.workReportsEditLineError : l10n.workReportsAddLineError;
       });
     }
   }
@@ -409,7 +604,7 @@ class _AddLineDialogState extends State<_AddLineDialog> {
     final l10n = AppLocalizations.of(context);
 
     return AlertDialog(
-      title: Text(l10n.workReportsAddLineTitle),
+      title: Text(_editing ? l10n.workReportsEditLineTitle : l10n.workReportsAddLineTitle),
       content: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -417,54 +612,13 @@ class _AddLineDialogState extends State<_AddLineDialog> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Autocomplete<Product>(
-                displayStringForOption: (p) => p.displayLabel,
-                optionsBuilder: (value) async {
-                  if (value.text.trim().length < 2) return const [];
-                  try {
-                    return await widget.repository.searchProducts(value.text);
-                  } catch (_) {
-                    return const [];
-                  }
-                },
-                onSelected: (product) {
-                  _productId = product.id;
-                  _concept.text = product.concept;
-                },
-                fieldViewBuilder: (context, controller, focusNode, onSubmitted) => TextFormField(
-                  controller: controller,
-                  focusNode: focusNode,
-                  onChanged: (_) => _productId = null,
-                  decoration: InputDecoration(
-                    labelText: l10n.workReportsAddLineProduct,
-                    hintText: l10n.workReportsAddLineProductHint,
-                    suffixIcon: const Icon(Icons.search, size: 18),
-                  ),
+              // Al editar, el producto de la línea no cambia.
+              if (!_editing || _product != null)
+                _ProductField(
+                  product: _product,
+                  onTap: _editing ? null : _pickProduct,
+                  onClear: _editing ? null : _clearProduct,
                 ),
-                optionsViewBuilder: (context, onSelected, options) => Align(
-                  alignment: Alignment.topLeft,
-                  child: Material(
-                    elevation: 4,
-                    borderRadius: BorderRadius.circular(12),
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxHeight: 220, maxWidth: 280),
-                      child: ListView(
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        children: [
-                          for (final product in options)
-                            ListTile(
-                              dense: true,
-                              title: Text(product.concept),
-                              subtitle: Text(product.ref),
-                              onTap: () => onSelected(product),
-                            ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _concept,
@@ -484,10 +638,17 @@ class _AddLineDialogState extends State<_AddLineDialog> {
                   Expanded(
                     child: TextFormField(
                       controller: _units,
+                      readOnly: _hourly,
                       keyboardType: const TextInputType.numberWithOptions(decimal: true),
                       inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]'))],
-                      decoration: InputDecoration(labelText: l10n.workReportsAddLineUnits),
+                      decoration: InputDecoration(
+                        labelText: _hourly ? l10n.workReportsLineHours : l10n.workReportsAddLineUnits,
+                        helperText: _hourly ? l10n.workReportsAddLineHoursHelper : null,
+                        helperMaxLines: 2,
+                        filled: _hourly,
+                      ),
                       validator: (v) {
+                        if (_hourly) return null; // Lo valida la duración.
                         final n = double.tryParse((v ?? '').replaceAll(',', '.'));
                         return (n == null || n <= 0) ? l10n.workReportsAddLineUnitsInvalid : null;
                       },
@@ -500,9 +661,27 @@ class _AddLineDialogState extends State<_AddLineDialog> {
                       keyboardType: TextInputType.number,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                       decoration: InputDecoration(labelText: l10n.workReportsAddLineDuration),
+                      validator: (v) => _hourly && (int.tryParse(v ?? '') ?? 0) <= 0
+                          ? l10n.workReportsAddLineDurationRequired
+                          : null,
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(height: 12),
+              TextFormField(
+                controller: _price,
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]'))],
+                decoration: InputDecoration(
+                  labelText: l10n.workReportsAddLinePrice,
+                  prefixIcon: const Icon(Icons.euro, size: 18),
+                ),
+                validator: (v) {
+                  if ((v ?? '').trim().isEmpty) return null;
+                  final n = double.tryParse(v!.replaceAll(',', '.'));
+                  return (n == null || n < 0) ? l10n.workReportsAddLinePriceInvalid : null;
+                },
               ),
               if (_error != null) ...[
                 const SizedBox(height: 12),
@@ -524,6 +703,127 @@ class _AddLineDialogState extends State<_AddLineDialog> {
               : Text(l10n.dialogAccept),
         ),
       ],
+    );
+  }
+}
+
+/// Campo del producto elegido: concepto, referencia y precio de catálogo.
+class _ProductField extends StatelessWidget {
+  final Product? product;
+  final VoidCallback? onTap;
+  final VoidCallback? onClear;
+
+  const _ProductField({required this.product, required this.onTap, required this.onClear});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final p = product;
+    return InkWell(
+      key: const ValueKey('product-field'),
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: InputDecorator(
+        isEmpty: p == null,
+        decoration: InputDecoration(
+          labelText: l10n.workReportsAddLineProduct,
+          hintText: l10n.workReportsAddLineProductHint,
+          suffixIcon: p == null
+              ? const Icon(Icons.search, size: 18)
+              : onClear == null
+                  ? null
+                  : IconButton(
+                  tooltip: MaterialLocalizations.of(context).deleteButtonTooltip,
+                  icon: const Icon(Icons.close, size: 18),
+                  onPressed: onClear,
+                ),
+        ),
+        child: p == null
+            ? null
+            : Text(
+                '${p.concept}\n${p.ref} · ${_priceLabel(context, p)}',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+      ),
+    );
+  }
+}
+
+String _priceLabel(BuildContext context, Product p) =>
+    '${formatMoney(context, p.price)}${p.hourly ? '/h' : ''}';
+
+/// Hoja con el catálogo y un buscador. Devuelve el producto tocado.
+class _ProductPickerSheet extends StatefulWidget {
+  final WorkReportRepository repository;
+
+  const _ProductPickerSheet({required this.repository});
+
+  @override
+  State<_ProductPickerSheet> createState() => _ProductPickerSheetState();
+}
+
+class _ProductPickerSheetState extends State<_ProductPickerSheet> {
+  late final Future<List<Product>> _all = widget.repository.products();
+  String _query = '';
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final media = MediaQuery.of(context);
+    final q = _query.trim().toLowerCase();
+
+    return Padding(
+      padding: EdgeInsets.only(bottom: media.viewInsets.bottom),
+      child: SizedBox(
+        height: media.size.height * 0.6,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: TextField(
+                autofocus: false,
+                onChanged: (v) => setState(() {
+                  _query = v;
+                }),
+                decoration: InputDecoration(
+                  hintText: l10n.workReportsAddLineProductHint,
+                  prefixIcon: const Icon(Icons.search),
+                ),
+              ),
+            ),
+            Expanded(
+              child: FutureBuilder<List<Product>>(
+                future: _all,
+                builder: (context, snapshot) {
+                  final products = (snapshot.data ?? const <Product>[])
+                      .where((p) => q.isEmpty ||
+                          p.ref.toLowerCase().contains(q) ||
+                          p.concept.toLowerCase().contains(q))
+                      .toList();
+                  if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+                  return ListView.separated(
+                    itemCount: products.length,
+                    separatorBuilder: (_, _) => const Divider(height: 1, indent: 16, endIndent: 16),
+                    itemBuilder: (context, index) {
+                      final product = products[index];
+                      return ListTile(
+                        title: Text(product.concept),
+                        subtitle: Text(product.ref),
+                        trailing: Text(
+                          _priceLabel(context, product),
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        onTap: () => Navigator.of(context).pop(product),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

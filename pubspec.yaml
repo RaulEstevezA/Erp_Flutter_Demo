@@ -16,6 +16,10 @@ dependencies:
   shared_preferences: ^2.5.5
   url_launcher: ^6.3.2
   package_info_plus: ^8.3.1
+  image_picker: ^1.2.3
+  record: ^7.1.1
+  audioplayers: ^6.8.1
+  path_provider: ^2.1.6
 
 dev_dependencies:
   flutter_test:
@@ -47,3 +51,4 @@ flutter:
     # modo "demo" (sin red). Es exactamente el mismo contenido que se
     # publica en GitHub Pages.
     - backend/api/
+    - assets/demo_files/

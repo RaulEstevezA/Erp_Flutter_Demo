@@ -1648,6 +1648,174 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Volver a firmar'**
   String get workReportsButtonResign;
+
+  /// No description provided for @workReportsFilesEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'No hay archivos adjuntos'**
+  String get workReportsFilesEmpty;
+
+  /// No description provided for @workReportsFilesErrorLoad.
+  ///
+  /// In es, this message translates to:
+  /// **'No se han podido cargar los archivos'**
+  String get workReportsFilesErrorLoad;
+
+  /// No description provided for @workReportsFilesCamera.
+  ///
+  /// In es, this message translates to:
+  /// **'Cámara'**
+  String get workReportsFilesCamera;
+
+  /// No description provided for @workReportsFilesGallery.
+  ///
+  /// In es, this message translates to:
+  /// **'Galería'**
+  String get workReportsFilesGallery;
+
+  /// No description provided for @workReportsFilesRecordAudio.
+  ///
+  /// In es, this message translates to:
+  /// **'Grabar audio'**
+  String get workReportsFilesRecordAudio;
+
+  /// No description provided for @workReportsFilesStopRecord.
+  ///
+  /// In es, this message translates to:
+  /// **'Parar'**
+  String get workReportsFilesStopRecord;
+
+  /// No description provided for @workReportsFilesRecording.
+  ///
+  /// In es, this message translates to:
+  /// **'Grabando...'**
+  String get workReportsFilesRecording;
+
+  /// No description provided for @workReportsFilesSaving.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardando...'**
+  String get workReportsFilesSaving;
+
+  /// No description provided for @workReportsFilesDelete.
+  ///
+  /// In es, this message translates to:
+  /// **'Eliminar'**
+  String get workReportsFilesDelete;
+
+  /// No description provided for @workReportsFilesDeleteConfirmTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Eliminar archivo'**
+  String get workReportsFilesDeleteConfirmTitle;
+
+  /// No description provided for @workReportsFilesDeleteConfirmMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Seguro que quieres eliminar este archivo?'**
+  String get workReportsFilesDeleteConfirmMessage;
+
+  /// No description provided for @workReportsFilesUploadError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido subir el archivo'**
+  String get workReportsFilesUploadError;
+
+  /// No description provided for @workReportsFilesDeleteError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido eliminar el archivo'**
+  String get workReportsFilesDeleteError;
+
+  /// No description provided for @workReportsFilesMicDenied.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin permiso para usar el micrófono'**
+  String get workReportsFilesMicDenied;
+
+  /// No description provided for @workReportsFilesMaxSizeHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Máx. 10 MB por archivo'**
+  String get workReportsFilesMaxSizeHint;
+
+  /// No description provided for @workReportsFilesMaxSizeErrorTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Archivo demasiado grande'**
+  String get workReportsFilesMaxSizeErrorTitle;
+
+  /// No description provided for @workReportsFilesMaxSizeErrorMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'El archivo seleccionado supera el límite de 10 MB. Por favor, elige un archivo más pequeño.'**
+  String get workReportsFilesMaxSizeErrorMessage;
+
+  /// No description provided for @workReportsAddLinePrice.
+  ///
+  /// In es, this message translates to:
+  /// **'Precio unitario (€)'**
+  String get workReportsAddLinePrice;
+
+  /// No description provided for @workReportsAddLinePriceInvalid.
+  ///
+  /// In es, this message translates to:
+  /// **'Introduce un precio válido'**
+  String get workReportsAddLinePriceInvalid;
+
+  /// No description provided for @workReportsLinePrice.
+  ///
+  /// In es, this message translates to:
+  /// **'Precio'**
+  String get workReportsLinePrice;
+
+  /// No description provided for @workReportsLineAmount.
+  ///
+  /// In es, this message translates to:
+  /// **'Importe'**
+  String get workReportsLineAmount;
+
+  /// No description provided for @workReportsLinesTotal.
+  ///
+  /// In es, this message translates to:
+  /// **'Total del parte'**
+  String get workReportsLinesTotal;
+
+  /// No description provided for @workReportsLineHours.
+  ///
+  /// In es, this message translates to:
+  /// **'Horas'**
+  String get workReportsLineHours;
+
+  /// No description provided for @workReportsAddLineHoursHelper.
+  ///
+  /// In es, this message translates to:
+  /// **'Por horas: se calcula con la duración'**
+  String get workReportsAddLineHoursHelper;
+
+  /// No description provided for @workReportsAddLineDurationRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'Indica los minutos'**
+  String get workReportsAddLineDurationRequired;
+
+  /// No description provided for @workReportsEditLineTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar línea'**
+  String get workReportsEditLineTitle;
+
+  /// No description provided for @workReportsEditLineSuccess.
+  ///
+  /// In es, this message translates to:
+  /// **'Línea actualizada'**
+  String get workReportsEditLineSuccess;
+
+  /// No description provided for @workReportsEditLineError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido actualizar la línea'**
+  String get workReportsEditLineError;
 }
 
 class _AppLocalizationsDelegate

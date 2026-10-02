@@ -842,6 +842,95 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get workReportsButtonResign => 'Torna a signar';
+
+  @override
+  String get workReportsFilesEmpty => 'No hi ha fitxers adjunts';
+
+  @override
+  String get workReportsFilesErrorLoad =>
+      'No s\'han pogut carregar els fitxers';
+
+  @override
+  String get workReportsFilesCamera => 'Càmera';
+
+  @override
+  String get workReportsFilesGallery => 'Galeria';
+
+  @override
+  String get workReportsFilesRecordAudio => 'Enregistra àudio';
+
+  @override
+  String get workReportsFilesStopRecord => 'Atura';
+
+  @override
+  String get workReportsFilesRecording => 'Enregistrant...';
+
+  @override
+  String get workReportsFilesSaving => 'Desant...';
+
+  @override
+  String get workReportsFilesDelete => 'Elimina';
+
+  @override
+  String get workReportsFilesDeleteConfirmTitle => 'Elimina el fitxer';
+
+  @override
+  String get workReportsFilesDeleteConfirmMessage =>
+      'Segur que vols eliminar aquest fitxer?';
+
+  @override
+  String get workReportsFilesUploadError => 'No s\'ha pogut pujar el fitxer';
+
+  @override
+  String get workReportsFilesDeleteError => 'No s\'ha pogut eliminar el fitxer';
+
+  @override
+  String get workReportsFilesMicDenied =>
+      'Sense permís per a fer servir el micròfon';
+
+  @override
+  String get workReportsFilesMaxSizeHint => 'Màx. 10 MB per fitxer';
+
+  @override
+  String get workReportsFilesMaxSizeErrorTitle => 'Fitxer massa gran';
+
+  @override
+  String get workReportsFilesMaxSizeErrorMessage =>
+      'El fitxer seleccionat supera el límit de 10 MB. Tria\'n un de més petit.';
+
+  @override
+  String get workReportsAddLinePrice => 'Preu unitari (€)';
+
+  @override
+  String get workReportsAddLinePriceInvalid => 'Introdueix un preu vàlid';
+
+  @override
+  String get workReportsLinePrice => 'Preu';
+
+  @override
+  String get workReportsLineAmount => 'Import';
+
+  @override
+  String get workReportsLinesTotal => 'Total del part';
+
+  @override
+  String get workReportsLineHours => 'Hores';
+
+  @override
+  String get workReportsAddLineHoursHelper =>
+      'Per hores: es calcula amb la durada';
+
+  @override
+  String get workReportsAddLineDurationRequired => 'Indica els minuts';
+
+  @override
+  String get workReportsEditLineTitle => 'Edita la línia';
+
+  @override
+  String get workReportsEditLineSuccess => 'Línia actualitzada';
+
+  @override
+  String get workReportsEditLineError => 'No s\'ha pogut actualitzar la línia';
 }
 
 /// The translations for Catalan Valencian, as used in Spain (`ca_ES`).
@@ -1007,4 +1096,26 @@ class AppLocalizationsCaEs extends AppLocalizationsCa {
 
   @override
   String get workReportsButtonResign => 'Torna a firmar';
+
+  @override
+  String get workReportsFilesRecordAudio => 'Grava àudio';
+
+  @override
+  String get workReportsFilesStopRecord => 'Para';
+
+  @override
+  String get workReportsFilesRecording => 'Gravant...';
+
+  @override
+  String get workReportsFilesSaving => 'Guardant...';
+
+  @override
+  String get workReportsFilesDeleteConfirmMessage =>
+      'Segur que vols eliminar este fitxer?';
+
+  @override
+  String get workReportsFilesMicDenied => 'Sense permís per a usar el micròfon';
+
+  @override
+  String get workReportsAddLinePriceInvalid => 'Introduïx un preu vàlid';
 }

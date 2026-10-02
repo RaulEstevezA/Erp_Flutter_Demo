@@ -39,8 +39,8 @@ La mensajería es un chat abierto: cualquier usuario puede escribir a cualquier 
 | Mensajería: conversaciones, chat con sondeo periódico, nuevo mensaje, botón flotante con no leídos | ✅ |
 | Clientes (gestión): buscador, ficha, presupuestos, pedidos, albaranes, facturas y recurrentes con detalle | ✅ |
 | Partes de visita (gestión): elegir empresa, visitas por mes/rango/búsqueda, detalle y alta con técnicos | ✅ |
-| Partes de trabajo: activos/finalizados, búsqueda, fechas, agrupar por empresa (gestión), detalle, añadir líneas con productos, firma del cliente. El trabajador solo ve sus partes | ✅ |
-| Archivos de los partes (cámara, galería, audio) | Próximamente |
+| Partes de trabajo: activos/finalizados, búsqueda, fechas, agrupar por empresa (gestión), detalle, añadir líneas con productos y precio de catálogo editable, corregir el precio de las líneas propias (las del servidor no se modifican), total del parte, firma del cliente. El trabajador solo ve sus partes | ✅ |
+| Archivos de los partes: fotos (cámara/galería), notas de voz (grabar/reproducir), eliminar, máx. 10 MB | ✅ |
 
 ## Backend estático
 
@@ -63,9 +63,11 @@ backend/
 ```
 
 - Se genera con `python3 tool/generate_backend.py`.
+- Las fotos de ejemplo de los partes son ilustraciones dibujadas con `flutter test tool/render_demo_files_test.dart` (en `assets/demo_files/`); la nota de voz la genera el script de Python.
+- Los archivos que adjunta el usuario se guardan en la carpeta de la app (móvil y escritorio) o en el almacenamiento del navegador (web, con espacio limitado).
 - Las fechas se guardan como `workday_offset` (días laborables antes de hoy) + hora. La app las convierte al día actual, así la demo siempre muestra actividad reciente.
 - En mensajería, al enviar un mensaje el destinatario "contesta" a los pocos segundos con una respuesta de `auto_replies`; el sondeo periódico del chat la recoge como un mensaje real.
-- Como el servidor es de solo lectura, lo que en una API real sería un `POST` (fichar, crear incidencias, solicitar o aprobar vacaciones, enviar mensajes, crear visitas, añadir líneas, firmar partes) se guarda en el dispositivo y se mezcla con los datos del servidor.
+- Como el servidor es de solo lectura, lo que en una API real sería un `POST` (fichar, crear incidencias, solicitar o aprobar vacaciones, enviar mensajes, crear visitas, añadir líneas, firmar partes, adjuntar archivos) se guarda en el dispositivo y se mezcla con los datos del servidor.
 
 **Publicar en GitHub Pages:** el workflow [`.github/workflows/backend-pages.yml`](.github/workflows/backend-pages.yml) publica la carpeta `backend/` cada vez que se hace push a `main` con cambios en ella (o a mano desde la pestaña Actions). Hay que activarlo una vez en *Settings → Pages → Source: GitHub Actions*. Después se escribe en la app la URL `https://raulesteveza.github.io/Erp_Flutter_Demo`; la app pide `<url>/api/<recurso>.json`.
 

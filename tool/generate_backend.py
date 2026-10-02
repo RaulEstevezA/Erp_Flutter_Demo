@@ -13,6 +13,7 @@ Uso:  python3 tool/generate_backend.py
 import json
 import math
 import random
+import wave
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -545,24 +546,27 @@ def build_visit_reports(rnd: random.Random, clients):
 
 # ── Partes de trabajo ──────────────────────────────────────────────────────
 
-# Catálogo ficticio: (referencia, concepto).
+# Catálogo ficticio: (referencia, concepto, precio unitario en €).
 PRODUCTS = [
-    ("MO-TEC", "Mano de obra técnico"),
-    ("MO-OFI", "Mano de obra oficial"),
-    ("DESP", "Desplazamiento"),
-    ("CAB-C6", "Cable de red Cat6 (m)"),
-    ("RJ45", "Conector RJ45"),
-    ("SW-24", "Switch 24 puertos"),
-    ("AP-WIFI", "Punto de acceso Wi-Fi"),
-    ("ROUT-PRO", "Router empresarial"),
-    ("LED-60", "Panel LED 60x60"),
-    ("MAG-16", "Magnetotérmico 16 A"),
-    ("DIF-40", "Diferencial 40 A"),
-    ("TUB-20", "Tubo corrugado 20 mm (m)"),
-    ("SAI-1K", "SAI 1000 VA"),
-    ("CAM-IP", "Cámara IP exterior"),
-    ("FONT-KIT", "Kit de fontanería"),
+    ("MO-TEC", "Mano de obra técnico (h)", 32.0),
+    ("MO-OFI", "Mano de obra oficial (h)", 28.0),
+    ("DESP", "Desplazamiento", 18.5),
+    ("CAB-C6", "Cable de red Cat6 (m)", 0.85),
+    ("RJ45", "Conector RJ45", 0.6),
+    ("SW-24", "Switch 24 puertos", 189.0),
+    ("AP-WIFI", "Punto de acceso Wi-Fi", 119.0),
+    ("ROUT-PRO", "Router empresarial", 189.0),
+    ("LED-60", "Panel LED 60x60", 34.9),
+    ("MAG-16", "Magnetotérmico 16 A", 9.5),
+    ("DIF-40", "Diferencial 40 A", 42.0),
+    ("TUB-20", "Tubo corrugado 20 mm (m)", 0.45),
+    ("SAI-1K", "SAI 1000 VA", 145.0),
+    ("CAM-IP", "Cámara IP exterior", 89.0),
+    ("FONT-KIT", "Kit de fontanería", 46.2),
 ]
+
+# Productos que se cobran por hora: sus unidades son horas de trabajo.
+HOURLY_REFS = {"MO-TEC", "MO-OFI"}
 
 # Estados del ERP: 1-3 activos, 4-8 finalizados (el 0, pendiente, no se expone).
 ACTIVE_STATUSES = [1, 1, 2, 2, 2, 3]
@@ -600,8 +604,8 @@ WORK_REMARKS = [
 
 
 def build_products():
-    return [{"id": i, "ref": ref, "concept": concept}
-            for i, (ref, concept) in enumerate(PRODUCTS, start=1)]
+    return [{"id": i, "ref": ref, "concept": concept, "price": price, "hourly": ref in HOURLY_REFS}
+            for i, (ref, concept, price) in enumerate(PRODUCTS, start=1)]
 
 
 def fake_signature(rnd: random.Random):
@@ -626,8 +630,9 @@ def fake_signature(rnd: random.Random):
 
 
 def build_work_reports(rnd: random.Random, clients):
-    products = {ref: i for i, (ref, _) in enumerate(PRODUCTS, start=1)}
-    concepts = dict(PRODUCTS)
+    products = {ref: i for i, (ref, _, _) in enumerate(PRODUCTS, start=1)}
+    concepts = {ref: concept for ref, concept, _ in PRODUCTS}
+    prices = {ref: price for ref, _, price in PRODUCTS}
     reports = []
     for client in clients:
         count = 8 if client["id"] == 1 else rnd.randint(1, 6)
@@ -642,11 +647,19 @@ def build_work_reports(rnd: random.Random, clients):
             if status != 1:
                 for ref in rnd.sample(refs, rnd.randint(1, len(refs))):
                     is_labour = ref.startswith("MO") or ref == "DESP"
+                    units = rnd.choice([1, 2, 3]) if is_labour else rnd.choice([1, 2, 4, 10, 25])
+                    duration = rnd.choice([30, 60, 90, 120]) if is_labour else 0
+                    if ref in HOURLY_REFS:
+                        # La mano de obra se cobra por horas: unidades = duración.
+                        units = round(duration / 60, 2)
+                    elif ref == "DESP":
+                        units = 1  # Un desplazamiento por línea.
                     lines.append({
                         "product_id": products[ref],
                         "concept": concepts[ref],
-                        "units": rnd.choice([1, 2, 3]) if is_labour else rnd.choice([1, 2, 4, 10, 25]),
-                        "duration": rnd.choice([30, 60, 90, 120]) if is_labour else 0,
+                        "units": units,
+                        "duration": duration,
+                        "price": prices[ref],
                     })
             reports.append({
                 "name": name,
@@ -671,6 +684,61 @@ def build_work_reports(rnd: random.Random, clients):
     for seq, report in enumerate(reports, start=1):
         result.append({"id": seq, "code": f"PT-{seq:05d}", **report})
     return result
+
+
+# ── Archivos de ejemplo de los partes ──────────────────────────────────────
+# Las imágenes son ilustraciones que dibuja tool/render_demo_files_test.dart;
+# la nota de voz es un WAV sintético generado aquí.
+
+DEMO_FILES_DIR = ROOT / "assets" / "demo_files"
+
+# Imagen que encaja con cada tipo de parte.
+TEMPLATE_IMAGES = {
+    "Instalación de red": "rack_red.png",
+    "Mantenimiento preventivo": "rack_red.png",
+    "Instalación Wi-Fi": "rack_red.png",
+    "Sustitución de router": "rack_red.png",
+    "Avería eléctrica": "cuadro_electrico.png",
+    "Instalación de SAI": "cuadro_electrico.png",
+    "Cambio de iluminación": "paneles_led.png",
+}
+
+
+def write_voice_note() -> None:
+    """Tres segundos de tonos suaves, como una nota de voz de prueba."""
+    rate = 16000
+    frames = bytearray()
+    notes = [(440, 0.35), (0, 0.1), (554, 0.35), (0, 0.1), (659, 0.6), (0, 0.2), (554, 0.3), (440, 0.8)]
+    for freq, seconds in notes:
+        count = int(rate * seconds)
+        for i in range(count):
+            fade = min(1.0, i / 400, (count - i) / 400)
+            value = int(9000 * fade * math.sin(2 * math.pi * freq * i / rate)) if freq else 0
+            frames += value.to_bytes(2, "little", signed=True)
+    DEMO_FILES_DIR.mkdir(parents=True, exist_ok=True)
+    with wave.open(str(DEMO_FILES_DIR / "nota_voz.wav"), "wb") as out:
+        out.setnchannels(1)
+        out.setsampwidth(2)
+        out.setframerate(rate)
+        out.writeframes(bytes(frames))
+
+
+def attach_demo_files(rnd: random.Random, reports) -> None:
+    """Añade fotos y notas de voz a algunos partes ya empezados."""
+    sizes = {f.name: f.stat().st_size for f in DEMO_FILES_DIR.glob("*.*")}
+    next_id = 1
+    for report in reports:
+        files = []
+        image = TEMPLATE_IMAGES.get(report["name"])
+        if report["status"] >= 2 and image and image in sizes and rnd.random() < 0.6:
+            files.append({"name": f"foto_{report['code'].lower()}.png", "type": "image", "asset": image})
+        if report["status"] >= 2 and rnd.random() < 0.25:
+            files.append({"name": f"nota_{report['code'].lower()}.wav", "type": "audio", "asset": "nota_voz.wav"})
+        for f in files:
+            f["id"] = next_id
+            f["size"] = sizes[f["asset"]]
+            next_id += 1
+        report["files"] = [{"id": f.pop("id"), **f} for f in files]
 
 
 def write(name: str, payload) -> None:
@@ -732,6 +800,8 @@ def main() -> None:
     write("workers.json", {"success": True, "data": build_workers()})
     write("visit_reports.json", {"success": True, "data": visits})
     work_reports = build_work_reports(random.Random(SEED + 3), clients)
+    write_voice_note()
+    attach_demo_files(random.Random(SEED + 4), work_reports)
     write("products.json", {"success": True, "data": build_products()})
     write("work_reports.json", {"success": True, "data": work_reports})
     print(f"{len(records)} fichajes, {len(incidents)} incidencias, {len(clients)} clientes, "
