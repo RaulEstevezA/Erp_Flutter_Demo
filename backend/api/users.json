@@ -10,7 +10,8 @@
     {
      "name": "superadmin"
     }
-   ]
+   ],
+   "worker_id": 1
   },
   {
    "id": 2,
@@ -21,7 +22,8 @@
     {
      "name": "admin"
     }
-   ]
+   ],
+   "worker_id": 2
   },
   {
    "id": 3,
@@ -32,7 +34,8 @@
     {
      "name": "user"
     }
-   ]
+   ],
+   "worker_id": 3
   },
   {
    "id": 4,
@@ -43,7 +46,8 @@
     {
      "name": "worker"
     }
-   ]
+   ],
+   "worker_id": 4
   },
   {
    "id": 5,
@@ -54,7 +58,8 @@
     {
      "name": "worker"
     }
-   ]
+   ],
+   "worker_id": 5
   },
   {
    "id": 6,
@@ -65,7 +70,8 @@
     {
      "name": "customer"
     }
-   ]
+   ],
+   "worker_id": null
   },
   {
    "id": 7,
@@ -76,7 +82,8 @@
     {
      "name": "supplier"
     }
-   ]
+   ],
+   "worker_id": null
   }
  ]
 }

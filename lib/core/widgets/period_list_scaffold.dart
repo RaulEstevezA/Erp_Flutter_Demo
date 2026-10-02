@@ -180,11 +180,15 @@ class GroupedByEmployeeList<T> extends StatefulWidget {
 
   final Widget Function(BuildContext context, T item) itemBuilder;
 
+  /// Icono de la cabecera de cada grupo (persona, empresa...).
+  final IconData icon;
+
   const GroupedByEmployeeList({
     super.key,
     required this.items,
     required this.groupOf,
     required this.itemBuilder,
+    this.icon = Icons.person_outline,
   });
 
   @override
@@ -218,6 +222,7 @@ class _GroupedByEmployeeListState<T> extends State<GroupedByEmployeeList<T>> {
               title: name,
               count: items.length,
               expanded: expanded,
+              icon: widget.icon,
               onToggle: () => setState(
                 () => expanded ? _expanded.remove(name) : _expanded.add(name),
               ),

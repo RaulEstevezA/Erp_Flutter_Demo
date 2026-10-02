@@ -4,9 +4,16 @@ import 'package:flutter/services.dart';
 import '../../core/di/app_services.dart';
 import '../../core/roles/permissions.dart';
 import '../../core/session/session_store.dart';
+import '../../domain/clients.dart';
 import '../../l10n/app_localizations.dart';
 import '../attendance/records_screen.dart';
 import '../attendance/records_view_model.dart';
+import '../clients/clients_screen.dart';
+import '../clients/clients_view_models.dart';
+import '../visit_reports/visit_reports_screen.dart';
+import '../work_reports/work_reports_screen.dart';
+import '../work_reports/work_reports_view_model.dart';
+import '../visit_reports/visit_reports_view_model.dart';
 import '../holidays/holidays_screen.dart';
 import '../holidays/holidays_view_model.dart';
 import '../home/home_screen.dart';
@@ -56,6 +63,10 @@ class _AppShellState extends State<AppShell> {
       MessagingViewModel(widget.services.messaging);
   late final ConversationsViewModel _conversations =
       ConversationsViewModel(widget.services.messaging);
+  late final ClientsViewModel _clients = ClientsViewModel(widget.services.clients);
+  late final WorkReportsViewModel _workReports = WorkReportsViewModel(widget.services.workReports);
+  /// Selector de empresa de la sección de partes de visita.
+  late final ClientsViewModel _visitClients = ClientsViewModel(widget.services.clients);
   late final HolidaysViewModel _holidays = HolidaysViewModel(
     widget.services.holidays,
     userId: widget.user.id,
@@ -75,6 +86,9 @@ class _AppShellState extends State<AppShell> {
     _records.dispose();
     _incidents.dispose();
     _holidays.dispose();
+    _clients.dispose();
+    _visitClients.dispose();
+    _workReports.dispose();
     _messaging.dispose();
     _conversations.dispose();
     super.dispose();
@@ -108,6 +122,12 @@ class _AppShellState extends State<AppShell> {
         _incidents.init();
       case AppSection.holidays:
         _holidays.init();
+      case AppSection.clients:
+        _clients.init();
+      case AppSection.visitReports:
+        _visitClients.init();
+      case AppSection.workReports:
+        _workReports.init();
       default:
         break;
     }
@@ -129,6 +149,35 @@ class _AppShellState extends State<AppShell> {
     _messaging.refreshUnread();
   }
 
+  /// Botón "Trabajos" de la ficha: partes de ese cliente.
+  void _pushClientWorkReports(ClientSummary client) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => WorkReportsScreen(
+          viewModel: WorkReportsViewModel(widget.services.workReports, clientId: client.id),
+          repository: widget.services.workReports,
+          title: client.name,
+          ownsViewModel: true,
+          onOpenDrawer: _openDrawer,
+        ),
+      ),
+    );
+  }
+
+  void _pushVisits(ClientSummary client) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => VisitReportsScreen(
+          client: client,
+          viewModel: VisitReportsViewModel(widget.services.visits, clientId: client.id),
+          repository: widget.services.visits,
+          canCreate: widget.user.role.can(AppPermission.createVisitReports),
+          onOpenDrawer: _openDrawer,
+        ),
+      ),
+    );
+  }
+
   Widget _body() {
     return switch (_section) {
       AppSection.attendanceRecords => RecordsScreen(
@@ -146,6 +195,28 @@ class _AppShellState extends State<AppShell> {
           viewModel: _conversations,
           messaging: _messaging,
           repository: widget.services.messaging,
+          onOpenDrawer: _openDrawer,
+          onBack: _goHome,
+        ),
+      AppSection.workReports => WorkReportsScreen(
+          viewModel: _workReports,
+          repository: widget.services.workReports,
+          onOpenDrawer: _openDrawer,
+          onBack: _goHome,
+        ),
+      AppSection.clients => ClientsScreen(
+          viewModel: _clients,
+          repository: widget.services.clients,
+          onOpenWorks: _pushClientWorkReports,
+          onOpenDrawer: _openDrawer,
+          onBack: _goHome,
+        ),
+      AppSection.visitReports => ClientsScreen(
+          viewModel: _visitClients,
+          repository: widget.services.clients,
+          title: AppLocalizations.of(context).menuVisitReports,
+          searchHint: AppLocalizations.of(context).visitReportsSearchHint,
+          onClientTap: _pushVisits,
           onOpenDrawer: _openDrawer,
           onBack: _goHome,
         ),

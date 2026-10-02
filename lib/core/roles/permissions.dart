@@ -9,6 +9,8 @@ enum AppPermission {
   viewAllAttendance,
   viewClients,
   viewWorkReports,
+  /// Ver todos los partes, no solo aquellos en los que se está asignado.
+  viewAllWorkReports,
   createWorkReports,
   viewVisitReports,
   createVisitReports,
@@ -26,6 +28,7 @@ abstract final class Permissions {
     AppPermission.viewAllAttendance,
     AppPermission.viewClients,
     AppPermission.viewWorkReports,
+    AppPermission.viewAllWorkReports,
     AppPermission.createWorkReports,
     AppPermission.viewVisitReports,
     AppPermission.createVisitReports,

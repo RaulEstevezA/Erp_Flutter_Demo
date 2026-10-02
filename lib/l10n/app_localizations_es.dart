@@ -523,4 +523,322 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get messagesYou => 'Tú: ';
+
+  @override
+  String get clientsSearchHint => 'Buscar nombre, CIF o población…';
+
+  @override
+  String get clientsEmpty => 'No hay clientes';
+
+  @override
+  String get clientsErrorLoad => 'No se han podido cargar los clientes';
+
+  @override
+  String get clientsLabelResponsible => 'Responsable';
+
+  @override
+  String get clientsLabelPaymentCondition => 'Condición de pago';
+
+  @override
+  String get clientsLabelPaymentMethod => 'Forma de pago';
+
+  @override
+  String get clientsLabelRemarks => 'Observaciones';
+
+  @override
+  String get clientsNoRemarks => 'Sin observaciones';
+
+  @override
+  String get clientsLabelAddresses => 'Direcciones';
+
+  @override
+  String get clientsNoAddresses => 'Sin direcciones';
+
+  @override
+  String get clientsLabelContacts => 'Contactos';
+
+  @override
+  String get clientsNoContacts => 'Sin contactos';
+
+  @override
+  String get clientsLabelBilling => 'Facturación';
+
+  @override
+  String get clientsLabelDelivering => 'Entrega';
+
+  @override
+  String get clientsButtonWorks => 'Trabajos';
+
+  @override
+  String get clientsButtonBudgets => 'Presupuestos';
+
+  @override
+  String get clientsButtonOrders => 'Pedidos';
+
+  @override
+  String get clientsButtonDeliveryNotes => 'Albaranes';
+
+  @override
+  String get clientsButtonInvoices => 'Facturas';
+
+  @override
+  String get clientsButtonRecurrentInvoices => 'Fact. recurrentes';
+
+  @override
+  String get clientsLabelPaymentData => 'Datos de pago';
+
+  @override
+  String get clientsLabelActive => 'Cliente activo';
+
+  @override
+  String get clientsLabelInactive => 'Cliente inactivo';
+
+  @override
+  String get clientsDocumentsEmpty => 'Sin documentos';
+
+  @override
+  String get clientsDocumentsErrorLoad =>
+      'No se han podido cargar los documentos';
+
+  @override
+  String get clientsDocumentsSearchHint => 'Buscar documento...';
+
+  @override
+  String get clientsDocDetailErrorLoad => 'No se ha podido cargar el documento';
+
+  @override
+  String get clientsDocDetailLines => 'Líneas';
+
+  @override
+  String get clientsDocDetailNoLines => 'Sin líneas';
+
+  @override
+  String get clientsDocDetailBase => 'Base imponible';
+
+  @override
+  String get clientsDocDetailTax => 'IVA';
+
+  @override
+  String get clientsDocDetailTotal => 'Total';
+
+  @override
+  String get clientsDocDetailRemarks => 'Observaciones';
+
+  @override
+  String get visitReportsSearchHint => 'Buscar empresa...';
+
+  @override
+  String get visitReportsVisitSearchHint => 'Buscar visita...';
+
+  @override
+  String get visitReportsEmpty => 'No hay visitas para este cliente';
+
+  @override
+  String get visitReportsErrorLoad => 'No se han podido cargar las visitas';
+
+  @override
+  String get visitReportsMonthView => 'Ver por meses';
+
+  @override
+  String get visitReportsNewButton => 'Nueva visita';
+
+  @override
+  String get visitReportsLabelWorker => 'Técnico';
+
+  @override
+  String get visitReportsWorkersSearchHint => 'Buscar técnico...';
+
+  @override
+  String get visitReportsLabelDescription => 'Descripción';
+
+  @override
+  String get visitReportsNoDescription => 'Sin descripción';
+
+  @override
+  String get visitReportsLabelTravelDistance => 'Distancia recorrida';
+
+  @override
+  String get visitReportsLabelTravelTime => 'Tiempo de desplazamiento';
+
+  @override
+  String get visitReportsCreateNameLabel => 'Nombre de la visita';
+
+  @override
+  String get visitReportsCreateNameHint => 'Ej. Reunión de seguimiento...';
+
+  @override
+  String get visitReportsCreateDateLabel => 'Fecha';
+
+  @override
+  String get visitReportsCreateTimeLabel => 'Hora';
+
+  @override
+  String get visitReportsCreateDurationLabel => 'Duración (min)';
+
+  @override
+  String get visitReportsCreateTravelDistanceLabel => 'Distancia (km)';
+
+  @override
+  String get visitReportsCreateTravelTimeLabel => 'Tiempo desplazamiento (min)';
+
+  @override
+  String get visitReportsCreateDescriptionLabel => 'Descripción';
+
+  @override
+  String get visitReportsCreateDescriptionHint => 'Describe la visita...';
+
+  @override
+  String get visitReportsCreateRequired => 'Campo obligatorio';
+
+  @override
+  String get visitReportsCreateSave => 'Guardar';
+
+  @override
+  String get visitReportsCreateSuccess => 'Visita creada correctamente';
+
+  @override
+  String get visitReportsCreateError => 'No se ha podido crear la visita';
+
+  @override
+  String get workReportsEmpty => 'No hay partes de trabajo';
+
+  @override
+  String get workReportsSearchHint => 'Buscar parte...';
+
+  @override
+  String get workReportsGroupByCompany => 'Agrupar por empresa';
+
+  @override
+  String get workReportsErrorLoad =>
+      'No se han podido cargar los partes de trabajo';
+
+  @override
+  String get workReportsFilterActive => 'Activos';
+
+  @override
+  String get workReportsFilterFinished => 'Finalizados';
+
+  @override
+  String get workReportsStatusAssigned => 'Asignado';
+
+  @override
+  String get workReportsStatusInProgress => 'En progreso';
+
+  @override
+  String get workReportsStatusPartiallyFinished => 'Parcialmente finalizado';
+
+  @override
+  String get workReportsStatusFinished => 'Finalizado';
+
+  @override
+  String get workReportsStatusNotified => 'Notificado';
+
+  @override
+  String get workReportsStatusDeliveryNote => 'Albarán generado';
+
+  @override
+  String get workReportsStatusInvoiced => 'Facturado';
+
+  @override
+  String get workReportsStatusRejected => 'Rechazado';
+
+  @override
+  String get workReportsLabelDescription => 'Descripción';
+
+  @override
+  String get workReportsNoDescription => 'Sin descripción';
+
+  @override
+  String get workReportsLabelRemarks => 'Observaciones';
+
+  @override
+  String get workReportsNoRemarks => 'Sin observaciones';
+
+  @override
+  String get workReportsLabelLines => 'Líneas de trabajo';
+
+  @override
+  String get workReportsNoLines => 'Sin líneas de trabajo';
+
+  @override
+  String get workReportsLineUnits => 'Uds.';
+
+  @override
+  String get workReportsLineDuration => 'Duración';
+
+  @override
+  String get workReportsAddLineTitle => 'Añadir línea';
+
+  @override
+  String get workReportsAddLineProduct => 'Producto (opcional)';
+
+  @override
+  String get workReportsAddLineProductHint => 'Buscar producto...';
+
+  @override
+  String get workReportsAddLineConcept => 'Concepto';
+
+  @override
+  String get workReportsAddLineConceptHint => 'Descripción de la tarea';
+
+  @override
+  String get workReportsAddLineConceptRequired => 'El concepto es obligatorio';
+
+  @override
+  String get workReportsAddLineUnits => 'Unidades';
+
+  @override
+  String get workReportsAddLineUnitsInvalid =>
+      'Introduce un número válido mayor que 0';
+
+  @override
+  String get workReportsAddLineDuration => 'Duración (min)';
+
+  @override
+  String get workReportsAddLineSuccess => 'Línea añadida correctamente';
+
+  @override
+  String get workReportsAddLineError => 'No se ha podido añadir la línea';
+
+  @override
+  String get workReportsLabelWorkers => 'Trabajadores asignados';
+
+  @override
+  String get workReportsNoWorkers => 'Sin trabajadores asignados';
+
+  @override
+  String get workReportsButtonFiles => 'Archivos';
+
+  @override
+  String get workReportsButtonSignature => 'Firma';
+
+  @override
+  String get workReportsButtonViewSignature => 'Ver firma';
+
+  @override
+  String get workReportsSignatureTitle => 'Firma del cliente';
+
+  @override
+  String get workReportsSignatureSave => 'Guardar firma';
+
+  @override
+  String get workReportsSignatureClear => 'Borrar';
+
+  @override
+  String get workReportsSignatureHint => 'Firma aquí';
+
+  @override
+  String get workReportsSignatureEmpty => 'Dibuja la firma antes de guardar';
+
+  @override
+  String get workReportsSignatureSuccess => 'Firma guardada correctamente';
+
+  @override
+  String get workReportsSignatureError => 'No se ha podido guardar la firma';
+
+  @override
+  String get workReportsViewSignatureTitle => 'Firma guardada';
+
+  @override
+  String get workReportsButtonResign => 'Volver a firmar';
 }

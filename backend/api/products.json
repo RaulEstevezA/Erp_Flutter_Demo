@@ -1,0 +1,80 @@
+{
+ "success": true,
+ "data": [
+  {
+   "id": 1,
+   "ref": "MO-TEC",
+   "concept": "Mano de obra técnico"
+  },
+  {
+   "id": 2,
+   "ref": "MO-OFI",
+   "concept": "Mano de obra oficial"
+  },
+  {
+   "id": 3,
+   "ref": "DESP",
+   "concept": "Desplazamiento"
+  },
+  {
+   "id": 4,
+   "ref": "CAB-C6",
+   "concept": "Cable de red Cat6 (m)"
+  },
+  {
+   "id": 5,
+   "ref": "RJ45",
+   "concept": "Conector RJ45"
+  },
+  {
+   "id": 6,
+   "ref": "SW-24",
+   "concept": "Switch 24 puertos"
+  },
+  {
+   "id": 7,
+   "ref": "AP-WIFI",
+   "concept": "Punto de acceso Wi-Fi"
+  },
+  {
+   "id": 8,
+   "ref": "ROUT-PRO",
+   "concept": "Router empresarial"
+  },
+  {
+   "id": 9,
+   "ref": "LED-60",
+   "concept": "Panel LED 60x60"
+  },
+  {
+   "id": 10,
+   "ref": "MAG-16",
+   "concept": "Magnetotérmico 16 A"
+  },
+  {
+   "id": 11,
+   "ref": "DIF-40",
+   "concept": "Diferencial 40 A"
+  },
+  {
+   "id": 12,
+   "ref": "TUB-20",
+   "concept": "Tubo corrugado 20 mm (m)"
+  },
+  {
+   "id": 13,
+   "ref": "SAI-1K",
+   "concept": "SAI 1000 VA"
+  },
+  {
+   "id": 14,
+   "ref": "CAM-IP",
+   "concept": "Cámara IP exterior"
+  },
+  {
+   "id": 15,
+   "ref": "FONT-KIT",
+   "concept": "Kit de fontanería"
+  }
+ ]
+}

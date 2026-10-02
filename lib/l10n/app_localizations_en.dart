@@ -517,4 +517,320 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get messagesYou => 'You: ';
+
+  @override
+  String get clientsSearchHint => 'Search name, VAT or town…';
+
+  @override
+  String get clientsEmpty => 'No clients found';
+
+  @override
+  String get clientsErrorLoad => 'Could not load clients';
+
+  @override
+  String get clientsLabelResponsible => 'Account manager';
+
+  @override
+  String get clientsLabelPaymentCondition => 'Payment terms';
+
+  @override
+  String get clientsLabelPaymentMethod => 'Payment method';
+
+  @override
+  String get clientsLabelRemarks => 'Remarks';
+
+  @override
+  String get clientsNoRemarks => 'No remarks';
+
+  @override
+  String get clientsLabelAddresses => 'Addresses';
+
+  @override
+  String get clientsNoAddresses => 'No addresses';
+
+  @override
+  String get clientsLabelContacts => 'Contacts';
+
+  @override
+  String get clientsNoContacts => 'No contacts';
+
+  @override
+  String get clientsLabelBilling => 'Billing';
+
+  @override
+  String get clientsLabelDelivering => 'Delivery';
+
+  @override
+  String get clientsButtonWorks => 'Works';
+
+  @override
+  String get clientsButtonBudgets => 'Budgets';
+
+  @override
+  String get clientsButtonOrders => 'Orders';
+
+  @override
+  String get clientsButtonDeliveryNotes => 'Delivery notes';
+
+  @override
+  String get clientsButtonInvoices => 'Invoices';
+
+  @override
+  String get clientsButtonRecurrentInvoices => 'Recur. invoices';
+
+  @override
+  String get clientsLabelPaymentData => 'Payment data';
+
+  @override
+  String get clientsLabelActive => 'Active client';
+
+  @override
+  String get clientsLabelInactive => 'Inactive client';
+
+  @override
+  String get clientsDocumentsEmpty => 'No documents';
+
+  @override
+  String get clientsDocumentsErrorLoad => 'Could not load documents';
+
+  @override
+  String get clientsDocumentsSearchHint => 'Search document...';
+
+  @override
+  String get clientsDocDetailErrorLoad => 'Could not load the document';
+
+  @override
+  String get clientsDocDetailLines => 'Lines';
+
+  @override
+  String get clientsDocDetailNoLines => 'No lines';
+
+  @override
+  String get clientsDocDetailBase => 'Taxable base';
+
+  @override
+  String get clientsDocDetailTax => 'VAT';
+
+  @override
+  String get clientsDocDetailTotal => 'Total';
+
+  @override
+  String get clientsDocDetailRemarks => 'Remarks';
+
+  @override
+  String get visitReportsSearchHint => 'Search company...';
+
+  @override
+  String get visitReportsVisitSearchHint => 'Search visit...';
+
+  @override
+  String get visitReportsEmpty => 'No visits for this client';
+
+  @override
+  String get visitReportsErrorLoad => 'Could not load visits';
+
+  @override
+  String get visitReportsMonthView => 'View by month';
+
+  @override
+  String get visitReportsNewButton => 'New visit';
+
+  @override
+  String get visitReportsLabelWorker => 'Technician';
+
+  @override
+  String get visitReportsWorkersSearchHint => 'Search technician...';
+
+  @override
+  String get visitReportsLabelDescription => 'Description';
+
+  @override
+  String get visitReportsNoDescription => 'No description';
+
+  @override
+  String get visitReportsLabelTravelDistance => 'Distance travelled';
+
+  @override
+  String get visitReportsLabelTravelTime => 'Travel time';
+
+  @override
+  String get visitReportsCreateNameLabel => 'Visit name';
+
+  @override
+  String get visitReportsCreateNameHint => 'E.g. Follow-up meeting...';
+
+  @override
+  String get visitReportsCreateDateLabel => 'Date';
+
+  @override
+  String get visitReportsCreateTimeLabel => 'Time';
+
+  @override
+  String get visitReportsCreateDurationLabel => 'Duration (min)';
+
+  @override
+  String get visitReportsCreateTravelDistanceLabel => 'Distance (km)';
+
+  @override
+  String get visitReportsCreateTravelTimeLabel => 'Travel time (min)';
+
+  @override
+  String get visitReportsCreateDescriptionLabel => 'Description';
+
+  @override
+  String get visitReportsCreateDescriptionHint => 'Describe the visit...';
+
+  @override
+  String get visitReportsCreateRequired => 'Required field';
+
+  @override
+  String get visitReportsCreateSave => 'Save';
+
+  @override
+  String get visitReportsCreateSuccess => 'Visit created';
+
+  @override
+  String get visitReportsCreateError => 'Could not create the visit';
+
+  @override
+  String get workReportsEmpty => 'No work reports';
+
+  @override
+  String get workReportsSearchHint => 'Search report...';
+
+  @override
+  String get workReportsGroupByCompany => 'Group by company';
+
+  @override
+  String get workReportsErrorLoad => 'Could not load work reports';
+
+  @override
+  String get workReportsFilterActive => 'Active';
+
+  @override
+  String get workReportsFilterFinished => 'Finished';
+
+  @override
+  String get workReportsStatusAssigned => 'Assigned';
+
+  @override
+  String get workReportsStatusInProgress => 'In progress';
+
+  @override
+  String get workReportsStatusPartiallyFinished => 'Partially finished';
+
+  @override
+  String get workReportsStatusFinished => 'Finished';
+
+  @override
+  String get workReportsStatusNotified => 'Notified';
+
+  @override
+  String get workReportsStatusDeliveryNote => 'Delivery note issued';
+
+  @override
+  String get workReportsStatusInvoiced => 'Invoiced';
+
+  @override
+  String get workReportsStatusRejected => 'Rejected';
+
+  @override
+  String get workReportsLabelDescription => 'Description';
+
+  @override
+  String get workReportsNoDescription => 'No description';
+
+  @override
+  String get workReportsLabelRemarks => 'Remarks';
+
+  @override
+  String get workReportsNoRemarks => 'No remarks';
+
+  @override
+  String get workReportsLabelLines => 'Work lines';
+
+  @override
+  String get workReportsNoLines => 'No work lines';
+
+  @override
+  String get workReportsLineUnits => 'Units';
+
+  @override
+  String get workReportsLineDuration => 'Duration';
+
+  @override
+  String get workReportsAddLineTitle => 'Add line';
+
+  @override
+  String get workReportsAddLineProduct => 'Product (optional)';
+
+  @override
+  String get workReportsAddLineProductHint => 'Search product...';
+
+  @override
+  String get workReportsAddLineConcept => 'Concept';
+
+  @override
+  String get workReportsAddLineConceptHint => 'Task description';
+
+  @override
+  String get workReportsAddLineConceptRequired => 'The concept is required';
+
+  @override
+  String get workReportsAddLineUnits => 'Units';
+
+  @override
+  String get workReportsAddLineUnitsInvalid =>
+      'Enter a valid number greater than 0';
+
+  @override
+  String get workReportsAddLineDuration => 'Duration (min)';
+
+  @override
+  String get workReportsAddLineSuccess => 'Line added';
+
+  @override
+  String get workReportsAddLineError => 'Could not add the line';
+
+  @override
+  String get workReportsLabelWorkers => 'Assigned workers';
+
+  @override
+  String get workReportsNoWorkers => 'No assigned workers';
+
+  @override
+  String get workReportsButtonFiles => 'Files';
+
+  @override
+  String get workReportsButtonSignature => 'Signature';
+
+  @override
+  String get workReportsButtonViewSignature => 'View signature';
+
+  @override
+  String get workReportsSignatureTitle => 'Client signature';
+
+  @override
+  String get workReportsSignatureSave => 'Save signature';
+
+  @override
+  String get workReportsSignatureClear => 'Clear';
+
+  @override
+  String get workReportsSignatureHint => 'Sign here';
+
+  @override
+  String get workReportsSignatureEmpty => 'Draw the signature before saving';
+
+  @override
+  String get workReportsSignatureSuccess => 'Signature saved';
+
+  @override
+  String get workReportsSignatureError => 'Could not save the signature';
+
+  @override
+  String get workReportsViewSignatureTitle => 'Saved signature';
+
+  @override
+  String get workReportsButtonResign => 'Sign again';
 }

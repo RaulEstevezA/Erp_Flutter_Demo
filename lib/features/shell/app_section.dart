@@ -29,6 +29,9 @@ enum AppSection {
     home,
     attendanceRecords,
     incidents,
+    workReports,
+    clients,
+    visitReports,
     holidays,
     messages,
   };

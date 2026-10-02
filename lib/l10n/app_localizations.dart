@@ -1018,6 +1018,636 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Tú: '**
   String get messagesYou;
+
+  /// No description provided for @clientsSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar nombre, CIF o población…'**
+  String get clientsSearchHint;
+
+  /// No description provided for @clientsEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'No hay clientes'**
+  String get clientsEmpty;
+
+  /// No description provided for @clientsErrorLoad.
+  ///
+  /// In es, this message translates to:
+  /// **'No se han podido cargar los clientes'**
+  String get clientsErrorLoad;
+
+  /// No description provided for @clientsLabelResponsible.
+  ///
+  /// In es, this message translates to:
+  /// **'Responsable'**
+  String get clientsLabelResponsible;
+
+  /// No description provided for @clientsLabelPaymentCondition.
+  ///
+  /// In es, this message translates to:
+  /// **'Condición de pago'**
+  String get clientsLabelPaymentCondition;
+
+  /// No description provided for @clientsLabelPaymentMethod.
+  ///
+  /// In es, this message translates to:
+  /// **'Forma de pago'**
+  String get clientsLabelPaymentMethod;
+
+  /// No description provided for @clientsLabelRemarks.
+  ///
+  /// In es, this message translates to:
+  /// **'Observaciones'**
+  String get clientsLabelRemarks;
+
+  /// No description provided for @clientsNoRemarks.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin observaciones'**
+  String get clientsNoRemarks;
+
+  /// No description provided for @clientsLabelAddresses.
+  ///
+  /// In es, this message translates to:
+  /// **'Direcciones'**
+  String get clientsLabelAddresses;
+
+  /// No description provided for @clientsNoAddresses.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin direcciones'**
+  String get clientsNoAddresses;
+
+  /// No description provided for @clientsLabelContacts.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactos'**
+  String get clientsLabelContacts;
+
+  /// No description provided for @clientsNoContacts.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin contactos'**
+  String get clientsNoContacts;
+
+  /// No description provided for @clientsLabelBilling.
+  ///
+  /// In es, this message translates to:
+  /// **'Facturación'**
+  String get clientsLabelBilling;
+
+  /// No description provided for @clientsLabelDelivering.
+  ///
+  /// In es, this message translates to:
+  /// **'Entrega'**
+  String get clientsLabelDelivering;
+
+  /// No description provided for @clientsButtonWorks.
+  ///
+  /// In es, this message translates to:
+  /// **'Trabajos'**
+  String get clientsButtonWorks;
+
+  /// No description provided for @clientsButtonBudgets.
+  ///
+  /// In es, this message translates to:
+  /// **'Presupuestos'**
+  String get clientsButtonBudgets;
+
+  /// No description provided for @clientsButtonOrders.
+  ///
+  /// In es, this message translates to:
+  /// **'Pedidos'**
+  String get clientsButtonOrders;
+
+  /// No description provided for @clientsButtonDeliveryNotes.
+  ///
+  /// In es, this message translates to:
+  /// **'Albaranes'**
+  String get clientsButtonDeliveryNotes;
+
+  /// No description provided for @clientsButtonInvoices.
+  ///
+  /// In es, this message translates to:
+  /// **'Facturas'**
+  String get clientsButtonInvoices;
+
+  /// No description provided for @clientsButtonRecurrentInvoices.
+  ///
+  /// In es, this message translates to:
+  /// **'Fact. recurrentes'**
+  String get clientsButtonRecurrentInvoices;
+
+  /// No description provided for @clientsLabelPaymentData.
+  ///
+  /// In es, this message translates to:
+  /// **'Datos de pago'**
+  String get clientsLabelPaymentData;
+
+  /// No description provided for @clientsLabelActive.
+  ///
+  /// In es, this message translates to:
+  /// **'Cliente activo'**
+  String get clientsLabelActive;
+
+  /// No description provided for @clientsLabelInactive.
+  ///
+  /// In es, this message translates to:
+  /// **'Cliente inactivo'**
+  String get clientsLabelInactive;
+
+  /// No description provided for @clientsDocumentsEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin documentos'**
+  String get clientsDocumentsEmpty;
+
+  /// No description provided for @clientsDocumentsErrorLoad.
+  ///
+  /// In es, this message translates to:
+  /// **'No se han podido cargar los documentos'**
+  String get clientsDocumentsErrorLoad;
+
+  /// No description provided for @clientsDocumentsSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar documento...'**
+  String get clientsDocumentsSearchHint;
+
+  /// No description provided for @clientsDocDetailErrorLoad.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido cargar el documento'**
+  String get clientsDocDetailErrorLoad;
+
+  /// No description provided for @clientsDocDetailLines.
+  ///
+  /// In es, this message translates to:
+  /// **'Líneas'**
+  String get clientsDocDetailLines;
+
+  /// No description provided for @clientsDocDetailNoLines.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin líneas'**
+  String get clientsDocDetailNoLines;
+
+  /// No description provided for @clientsDocDetailBase.
+  ///
+  /// In es, this message translates to:
+  /// **'Base imponible'**
+  String get clientsDocDetailBase;
+
+  /// No description provided for @clientsDocDetailTax.
+  ///
+  /// In es, this message translates to:
+  /// **'IVA'**
+  String get clientsDocDetailTax;
+
+  /// No description provided for @clientsDocDetailTotal.
+  ///
+  /// In es, this message translates to:
+  /// **'Total'**
+  String get clientsDocDetailTotal;
+
+  /// No description provided for @clientsDocDetailRemarks.
+  ///
+  /// In es, this message translates to:
+  /// **'Observaciones'**
+  String get clientsDocDetailRemarks;
+
+  /// No description provided for @visitReportsSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar empresa...'**
+  String get visitReportsSearchHint;
+
+  /// No description provided for @visitReportsVisitSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar visita...'**
+  String get visitReportsVisitSearchHint;
+
+  /// No description provided for @visitReportsEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'No hay visitas para este cliente'**
+  String get visitReportsEmpty;
+
+  /// No description provided for @visitReportsErrorLoad.
+  ///
+  /// In es, this message translates to:
+  /// **'No se han podido cargar las visitas'**
+  String get visitReportsErrorLoad;
+
+  /// No description provided for @visitReportsMonthView.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver por meses'**
+  String get visitReportsMonthView;
+
+  /// No description provided for @visitReportsNewButton.
+  ///
+  /// In es, this message translates to:
+  /// **'Nueva visita'**
+  String get visitReportsNewButton;
+
+  /// No description provided for @visitReportsLabelWorker.
+  ///
+  /// In es, this message translates to:
+  /// **'Técnico'**
+  String get visitReportsLabelWorker;
+
+  /// No description provided for @visitReportsWorkersSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar técnico...'**
+  String get visitReportsWorkersSearchHint;
+
+  /// No description provided for @visitReportsLabelDescription.
+  ///
+  /// In es, this message translates to:
+  /// **'Descripción'**
+  String get visitReportsLabelDescription;
+
+  /// No description provided for @visitReportsNoDescription.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin descripción'**
+  String get visitReportsNoDescription;
+
+  /// No description provided for @visitReportsLabelTravelDistance.
+  ///
+  /// In es, this message translates to:
+  /// **'Distancia recorrida'**
+  String get visitReportsLabelTravelDistance;
+
+  /// No description provided for @visitReportsLabelTravelTime.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo de desplazamiento'**
+  String get visitReportsLabelTravelTime;
+
+  /// No description provided for @visitReportsCreateNameLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre de la visita'**
+  String get visitReportsCreateNameLabel;
+
+  /// No description provided for @visitReportsCreateNameHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Ej. Reunión de seguimiento...'**
+  String get visitReportsCreateNameHint;
+
+  /// No description provided for @visitReportsCreateDateLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Fecha'**
+  String get visitReportsCreateDateLabel;
+
+  /// No description provided for @visitReportsCreateTimeLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Hora'**
+  String get visitReportsCreateTimeLabel;
+
+  /// No description provided for @visitReportsCreateDurationLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Duración (min)'**
+  String get visitReportsCreateDurationLabel;
+
+  /// No description provided for @visitReportsCreateTravelDistanceLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Distancia (km)'**
+  String get visitReportsCreateTravelDistanceLabel;
+
+  /// No description provided for @visitReportsCreateTravelTimeLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Tiempo desplazamiento (min)'**
+  String get visitReportsCreateTravelTimeLabel;
+
+  /// No description provided for @visitReportsCreateDescriptionLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Descripción'**
+  String get visitReportsCreateDescriptionLabel;
+
+  /// No description provided for @visitReportsCreateDescriptionHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Describe la visita...'**
+  String get visitReportsCreateDescriptionHint;
+
+  /// No description provided for @visitReportsCreateRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'Campo obligatorio'**
+  String get visitReportsCreateRequired;
+
+  /// No description provided for @visitReportsCreateSave.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar'**
+  String get visitReportsCreateSave;
+
+  /// No description provided for @visitReportsCreateSuccess.
+  ///
+  /// In es, this message translates to:
+  /// **'Visita creada correctamente'**
+  String get visitReportsCreateSuccess;
+
+  /// No description provided for @visitReportsCreateError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido crear la visita'**
+  String get visitReportsCreateError;
+
+  /// No description provided for @workReportsEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'No hay partes de trabajo'**
+  String get workReportsEmpty;
+
+  /// No description provided for @workReportsSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar parte...'**
+  String get workReportsSearchHint;
+
+  /// No description provided for @workReportsGroupByCompany.
+  ///
+  /// In es, this message translates to:
+  /// **'Agrupar por empresa'**
+  String get workReportsGroupByCompany;
+
+  /// No description provided for @workReportsErrorLoad.
+  ///
+  /// In es, this message translates to:
+  /// **'No se han podido cargar los partes de trabajo'**
+  String get workReportsErrorLoad;
+
+  /// No description provided for @workReportsFilterActive.
+  ///
+  /// In es, this message translates to:
+  /// **'Activos'**
+  String get workReportsFilterActive;
+
+  /// No description provided for @workReportsFilterFinished.
+  ///
+  /// In es, this message translates to:
+  /// **'Finalizados'**
+  String get workReportsFilterFinished;
+
+  /// No description provided for @workReportsStatusAssigned.
+  ///
+  /// In es, this message translates to:
+  /// **'Asignado'**
+  String get workReportsStatusAssigned;
+
+  /// No description provided for @workReportsStatusInProgress.
+  ///
+  /// In es, this message translates to:
+  /// **'En progreso'**
+  String get workReportsStatusInProgress;
+
+  /// No description provided for @workReportsStatusPartiallyFinished.
+  ///
+  /// In es, this message translates to:
+  /// **'Parcialmente finalizado'**
+  String get workReportsStatusPartiallyFinished;
+
+  /// No description provided for @workReportsStatusFinished.
+  ///
+  /// In es, this message translates to:
+  /// **'Finalizado'**
+  String get workReportsStatusFinished;
+
+  /// No description provided for @workReportsStatusNotified.
+  ///
+  /// In es, this message translates to:
+  /// **'Notificado'**
+  String get workReportsStatusNotified;
+
+  /// No description provided for @workReportsStatusDeliveryNote.
+  ///
+  /// In es, this message translates to:
+  /// **'Albarán generado'**
+  String get workReportsStatusDeliveryNote;
+
+  /// No description provided for @workReportsStatusInvoiced.
+  ///
+  /// In es, this message translates to:
+  /// **'Facturado'**
+  String get workReportsStatusInvoiced;
+
+  /// No description provided for @workReportsStatusRejected.
+  ///
+  /// In es, this message translates to:
+  /// **'Rechazado'**
+  String get workReportsStatusRejected;
+
+  /// No description provided for @workReportsLabelDescription.
+  ///
+  /// In es, this message translates to:
+  /// **'Descripción'**
+  String get workReportsLabelDescription;
+
+  /// No description provided for @workReportsNoDescription.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin descripción'**
+  String get workReportsNoDescription;
+
+  /// No description provided for @workReportsLabelRemarks.
+  ///
+  /// In es, this message translates to:
+  /// **'Observaciones'**
+  String get workReportsLabelRemarks;
+
+  /// No description provided for @workReportsNoRemarks.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin observaciones'**
+  String get workReportsNoRemarks;
+
+  /// No description provided for @workReportsLabelLines.
+  ///
+  /// In es, this message translates to:
+  /// **'Líneas de trabajo'**
+  String get workReportsLabelLines;
+
+  /// No description provided for @workReportsNoLines.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin líneas de trabajo'**
+  String get workReportsNoLines;
+
+  /// No description provided for @workReportsLineUnits.
+  ///
+  /// In es, this message translates to:
+  /// **'Uds.'**
+  String get workReportsLineUnits;
+
+  /// No description provided for @workReportsLineDuration.
+  ///
+  /// In es, this message translates to:
+  /// **'Duración'**
+  String get workReportsLineDuration;
+
+  /// No description provided for @workReportsAddLineTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Añadir línea'**
+  String get workReportsAddLineTitle;
+
+  /// No description provided for @workReportsAddLineProduct.
+  ///
+  /// In es, this message translates to:
+  /// **'Producto (opcional)'**
+  String get workReportsAddLineProduct;
+
+  /// No description provided for @workReportsAddLineProductHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar producto...'**
+  String get workReportsAddLineProductHint;
+
+  /// No description provided for @workReportsAddLineConcept.
+  ///
+  /// In es, this message translates to:
+  /// **'Concepto'**
+  String get workReportsAddLineConcept;
+
+  /// No description provided for @workReportsAddLineConceptHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Descripción de la tarea'**
+  String get workReportsAddLineConceptHint;
+
+  /// No description provided for @workReportsAddLineConceptRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'El concepto es obligatorio'**
+  String get workReportsAddLineConceptRequired;
+
+  /// No description provided for @workReportsAddLineUnits.
+  ///
+  /// In es, this message translates to:
+  /// **'Unidades'**
+  String get workReportsAddLineUnits;
+
+  /// No description provided for @workReportsAddLineUnitsInvalid.
+  ///
+  /// In es, this message translates to:
+  /// **'Introduce un número válido mayor que 0'**
+  String get workReportsAddLineUnitsInvalid;
+
+  /// No description provided for @workReportsAddLineDuration.
+  ///
+  /// In es, this message translates to:
+  /// **'Duración (min)'**
+  String get workReportsAddLineDuration;
+
+  /// No description provided for @workReportsAddLineSuccess.
+  ///
+  /// In es, this message translates to:
+  /// **'Línea añadida correctamente'**
+  String get workReportsAddLineSuccess;
+
+  /// No description provided for @workReportsAddLineError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido añadir la línea'**
+  String get workReportsAddLineError;
+
+  /// No description provided for @workReportsLabelWorkers.
+  ///
+  /// In es, this message translates to:
+  /// **'Trabajadores asignados'**
+  String get workReportsLabelWorkers;
+
+  /// No description provided for @workReportsNoWorkers.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin trabajadores asignados'**
+  String get workReportsNoWorkers;
+
+  /// No description provided for @workReportsButtonFiles.
+  ///
+  /// In es, this message translates to:
+  /// **'Archivos'**
+  String get workReportsButtonFiles;
+
+  /// No description provided for @workReportsButtonSignature.
+  ///
+  /// In es, this message translates to:
+  /// **'Firma'**
+  String get workReportsButtonSignature;
+
+  /// No description provided for @workReportsButtonViewSignature.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver firma'**
+  String get workReportsButtonViewSignature;
+
+  /// No description provided for @workReportsSignatureTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Firma del cliente'**
+  String get workReportsSignatureTitle;
+
+  /// No description provided for @workReportsSignatureSave.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar firma'**
+  String get workReportsSignatureSave;
+
+  /// No description provided for @workReportsSignatureClear.
+  ///
+  /// In es, this message translates to:
+  /// **'Borrar'**
+  String get workReportsSignatureClear;
+
+  /// No description provided for @workReportsSignatureHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Firma aquí'**
+  String get workReportsSignatureHint;
+
+  /// No description provided for @workReportsSignatureEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'Dibuja la firma antes de guardar'**
+  String get workReportsSignatureEmpty;
+
+  /// No description provided for @workReportsSignatureSuccess.
+  ///
+  /// In es, this message translates to:
+  /// **'Firma guardada correctamente'**
+  String get workReportsSignatureSuccess;
+
+  /// No description provided for @workReportsSignatureError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido guardar la firma'**
+  String get workReportsSignatureError;
+
+  /// No description provided for @workReportsViewSignatureTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Firma guardada'**
+  String get workReportsViewSignatureTitle;
+
+  /// No description provided for @workReportsButtonResign.
+  ///
+  /// In es, this message translates to:
+  /// **'Volver a firmar'**
+  String get workReportsButtonResign;
 }
 
 class _AppLocalizationsDelegate
