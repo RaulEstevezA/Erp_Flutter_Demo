@@ -474,6 +474,56 @@ class AppLocalizationsCa extends AppLocalizations {
   String holidaysOnDay(String date) {
     return 'Vacances el $date';
   }
+
+  @override
+  String get messagesNew => 'Nou missatge';
+
+  @override
+  String get messagesList => 'Missatges';
+
+  @override
+  String get messagesRecipientSearch => 'Cercar destinatari...';
+
+  @override
+  String get messagesRecipientRequired => 'Selecciona un destinatari';
+
+  @override
+  String get messagesNoRecipients => 'No hi ha destinataris disponibles';
+
+  @override
+  String get messagesBody => 'Missatge';
+
+  @override
+  String get messagesBodyHint => 'Escriu el teu missatge...';
+
+  @override
+  String get messagesBodyRequired => 'El missatge no pot estar buit';
+
+  @override
+  String get messagesSend => 'Enviar';
+
+  @override
+  String get messagesSent => 'Missatge enviat';
+
+  @override
+  String get messagesSendError =>
+      'No s\'ha pogut enviar el missatge. Torna-ho a provar.';
+
+  @override
+  String get messagesEmpty => 'Encara no tens converses';
+
+  @override
+  String get messagesLoadError => 'No s\'han pogut carregar els missatges';
+
+  @override
+  String get messagesTypeHint => 'Escriu un missatge...';
+
+  @override
+  String get messagesChatEmpty =>
+      'Encara no hi ha missatges en aquesta conversa';
+
+  @override
+  String get messagesYou => 'Tu: ';
 }
 
 /// The translations for Catalan Valencian, as used in Spain (`ca_ES`).
@@ -556,4 +606,14 @@ class AppLocalizationsCaEs extends AppLocalizationsCa {
   String holidaysOnDay(String date) {
     return 'Vacacions el $date';
   }
+
+  @override
+  String get messagesRecipientSearch => 'Buscar destinatari...';
+
+  @override
+  String get messagesSendError =>
+      'No s\'ha pogut enviar el missatge. Torna a intentar-ho.';
+
+  @override
+  String get messagesChatEmpty => 'Encara no hi ha missatges en esta conversa';
 }

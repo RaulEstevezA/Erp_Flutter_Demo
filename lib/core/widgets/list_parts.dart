@@ -57,6 +57,29 @@ class TintedIcon extends StatelessWidget {
   }
 }
 
+/// Círculo con las iniciales de una persona o empresa.
+class InitialsAvatar extends StatelessWidget {
+  final String name;
+  final double radius;
+
+  const InitialsAvatar({super.key, required this.name, this.radius = 22});
+
+  @override
+  Widget build(BuildContext context) {
+    final words = name.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).toList();
+    final initials = words.take(2).map((w) => w[0].toUpperCase()).join();
+    final brand = context.brand;
+    return CircleAvatar(
+      radius: radius,
+      backgroundColor: brand.withValues(alpha: 0.14),
+      child: Text(
+        initials,
+        style: TextStyle(color: brand, fontWeight: FontWeight.w700, fontSize: radius * 0.7),
+      ),
+    );
+  }
+}
+
 /// Cabecera plegable de un grupo (p. ej. un empleado) con su contador.
 class CollapsibleHeader extends StatelessWidget {
   final String title;

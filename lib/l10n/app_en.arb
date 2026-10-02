@@ -136,5 +136,21 @@
   "holidaysSummaryCompany": "Company: {count} days",
   "holidayByWorker": "Requested by worker",
   "holidayByCompany": "Assigned by company",
-  "holidaysOnDay": "Holidays on {date}"
+  "holidaysOnDay": "Holidays on {date}",
+  "messagesNew": "New message",
+  "messagesList": "Messages",
+  "messagesRecipientSearch": "Search recipient...",
+  "messagesRecipientRequired": "Select a recipient",
+  "messagesNoRecipients": "No recipients available",
+  "messagesBody": "Message",
+  "messagesBodyHint": "Write your message...",
+  "messagesBodyRequired": "The message cannot be empty",
+  "messagesSend": "Send",
+  "messagesSent": "Message sent",
+  "messagesSendError": "Could not send the message. Please try again.",
+  "messagesEmpty": "You have no conversations yet",
+  "messagesLoadError": "Could not load messages",
+  "messagesTypeHint": "Type a message...",
+  "messagesChatEmpty": "No messages in this conversation yet",
+  "messagesYou": "You: "
 }

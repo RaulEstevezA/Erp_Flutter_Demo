@@ -13,6 +13,8 @@ import '../home/home_screen.dart';
 import '../home/home_view_model.dart';
 import '../incidents/incidents_screen.dart';
 import '../incidents/incidents_view_model.dart';
+import '../messaging/conversations_screen.dart';
+import '../messaging/messaging_view_models.dart';
 import 'app_drawer.dart';
 import 'app_section.dart';
 
@@ -50,6 +52,10 @@ class _AppShellState extends State<AppShell> {
     widget.services.attendance,
     canViewAll: widget.user.role.can(AppPermission.viewAllAttendance),
   );
+  late final MessagingViewModel _messaging =
+      MessagingViewModel(widget.services.messaging);
+  late final ConversationsViewModel _conversations =
+      ConversationsViewModel(widget.services.messaging);
   late final HolidaysViewModel _holidays = HolidaysViewModel(
     widget.services.holidays,
     userId: widget.user.id,
@@ -60,6 +66,7 @@ class _AppShellState extends State<AppShell> {
   void initState() {
     super.initState();
     _home.loadStatus();
+    _messaging.start();
   }
 
   @override
@@ -68,6 +75,8 @@ class _AppShellState extends State<AppShell> {
     _records.dispose();
     _incidents.dispose();
     _holidays.dispose();
+    _messaging.dispose();
+    _conversations.dispose();
     super.dispose();
   }
 
@@ -92,6 +101,7 @@ class _AppShellState extends State<AppShell> {
     switch (section) {
       case AppSection.home:
         _home.loadStatus();
+        _messaging.refreshUnread();
       case AppSection.attendanceRecords:
         _records.init();
       case AppSection.incidents:
@@ -102,6 +112,21 @@ class _AppShellState extends State<AppShell> {
         break;
     }
     setState(() => _section = section);
+  }
+
+  /// Desde el botón flotante del inicio el listado se apila sobre el shell.
+  Future<void> _pushConversations() async {
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => ConversationsScreen(
+          viewModel: _conversations,
+          messaging: _messaging,
+          repository: widget.services.messaging,
+          onOpenDrawer: _openDrawer,
+        ),
+      ),
+    );
+    _messaging.refreshUnread();
   }
 
   Widget _body() {
@@ -117,6 +142,13 @@ class _AppShellState extends State<AppShell> {
           onOpenDrawer: _openDrawer,
           onBack: _goHome,
         ),
+      AppSection.messages => ConversationsScreen(
+          viewModel: _conversations,
+          messaging: _messaging,
+          repository: widget.services.messaging,
+          onOpenDrawer: _openDrawer,
+          onBack: _goHome,
+        ),
       AppSection.holidays => HolidaysScreen(
           viewModel: _holidays,
           onOpenDrawer: _openDrawer,
@@ -127,6 +159,8 @@ class _AppShellState extends State<AppShell> {
           user: widget.user,
           onSectionSelected: _select,
           onOpenDrawer: _openDrawer,
+          messaging: _messaging,
+          onOpenConversations: _pushConversations,
         ),
     };
   }
@@ -146,7 +180,7 @@ class _AppShellState extends State<AppShell> {
         }
       },
       child: ListenableBuilder(
-        listenable: Listenable.merge([_home, settings]),
+        listenable: Listenable.merge([_home, settings, _messaging]),
         builder: (context, _) {
           return Scaffold(
             key: _scaffoldKey,
@@ -159,6 +193,7 @@ class _AppShellState extends State<AppShell> {
               onSelect: _select,
               onToggleTheme: settings.toggleTheme,
               onLogout: widget.onLogout,
+              unreadMessages: _messaging.unreadCount,
             ),
             body: Stack(
               children: [

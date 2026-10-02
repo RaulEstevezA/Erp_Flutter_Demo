@@ -8,13 +8,14 @@ import '../../l10n/app_localizations.dart';
 /// partir de esta lista, filtrada por los permisos del rol.
 enum AppSection {
   home(Icons.home_outlined, null),
-  attendanceRecords(Icons.history_outlined, null),
-  incidents(Icons.flag_outlined, null),
+  attendanceRecords(Icons.history_outlined, AppPermission.viewOwnAttendance),
+  incidents(Icons.flag_outlined, AppPermission.viewOwnAttendance),
   workReports(Icons.assignment_outlined, AppPermission.viewWorkReports),
   clients(Icons.people_outline, AppPermission.viewClients),
   visitReports(Icons.badge_outlined, AppPermission.viewVisitReports),
   holidays(Icons.beach_access_outlined, AppPermission.viewHolidays),
-  messages(Icons.chat_bubble_outline, AppPermission.viewMessages);
+  /// Chat abierto a todos los roles.
+  messages(Icons.chat_bubble_outline, null);
 
   final IconData icon;
 
@@ -24,7 +25,13 @@ enum AppSection {
   const AppSection(this.icon, this.permission);
 
   /// Secciones ya construidas en la demo. El resto muestra "próximamente".
-  static const implemented = {home, attendanceRecords, incidents, holidays};
+  static const implemented = {
+    home,
+    attendanceRecords,
+    incidents,
+    holidays,
+    messages,
+  };
 
   bool get isImplemented => implemented.contains(this);
 

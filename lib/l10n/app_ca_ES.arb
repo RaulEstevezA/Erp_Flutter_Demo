@@ -20,5 +20,8 @@
   "holidaysSummary": "Vacacions {year}: {used}/{total} dies",
   "holidaysOnDay": "Vacacions el {date}",
   "holidaysRequestError": "No s'ha pogut enviar la sol·licitud. Torna a intentar-ho.",
-  "holidaysActionError": "No s'ha pogut completar l'acció. Torna a intentar-ho."
+  "holidaysActionError": "No s'ha pogut completar l'acció. Torna a intentar-ho.",
+  "messagesRecipientSearch": "Buscar destinatari...",
+  "messagesSendError": "No s'ha pogut enviar el missatge. Torna a intentar-ho.",
+  "messagesChatEmpty": "Encara no hi ha missatges en esta conversa"
 }

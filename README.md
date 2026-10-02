@@ -17,12 +17,14 @@ En el login, usa como servidor `demo` (datos empaquetados en la app) o la URL do
 
 | Correo | Rol | Ve |
 |---|---|---|
-| superadmin@erpflutter.dev | Superadmin | Todo, fichajes de toda la plantilla |
-| admin@erpflutter.dev | Admin | Todo, fichajes de toda la plantilla |
+| superadmin@erpflutter.dev | Superadmin | Todo, fichajes y vacaciones de toda la plantilla |
+| admin@erpflutter.dev | Admin | Todo, fichajes y vacaciones de toda la plantilla |
 | usuario@erpflutter.dev | Usuario | Sus fichajes, partes, vacaciones, mensajes |
-| trabajador@erpflutter.dev | Trabajador | Sus fichajes, partes, vacaciones |
+| trabajador@erpflutter.dev | Trabajador | Sus fichajes, partes, vacaciones, mensajes |
 | cliente@erpflutter.dev | Cliente | Mensajes |
 | proveedor@erpflutter.dev | Proveedor | Mensajes |
+
+La mensajería es un chat abierto: cualquier usuario puede escribir a cualquier otro, sea cual sea su rol.
 
 ## Estado de los módulos
 
@@ -34,7 +36,8 @@ En el login, usa como servidor `demo` (datos empaquetados en la app) o la URL do
 | Fichajes: por mes o rango, agrupar por empleado, ubicación, reportar incidencia | ✅ |
 | Incidencias: listado, agrupación, detalle | ✅ |
 | Vacaciones: lista anual y calendario, resumen, solicitar/cancelar (trabajador), aprobar/rechazar (gestión) | ✅ |
-| Mensajería, partes de trabajo, clientes, partes de visita | Próximamente |
+| Mensajería: conversaciones, chat con sondeo periódico, nuevo mensaje, botón flotante con no leídos | ✅ |
+| Partes de trabajo, clientes, partes de visita | Próximamente |
 
 ## Backend estático
 
@@ -46,12 +49,14 @@ backend/
     ├── company.json
     ├── clock_in_records.json
     ├── clock_in_incidents.json
+    ├── messages.json              # conversaciones, mensajes y respuestas automáticas
     └── holidays.json              # festivos, cupo anual y períodos
 ```
 
 - Se genera con `python3 tool/generate_backend.py`.
 - Las fechas se guardan como `workday_offset` (días laborables antes de hoy) + hora. La app las convierte al día actual, así la demo siempre muestra actividad reciente.
-- Como el servidor es de solo lectura, lo que en una API real sería un `POST` (fichar, crear incidencias) se guarda en el dispositivo y se mezcla con los datos del servidor.
+- En mensajería, al enviar un mensaje el destinatario "contesta" a los pocos segundos con una respuesta de `auto_replies`; el sondeo periódico del chat la recoge como un mensaje real.
+- Como el servidor es de solo lectura, lo que en una API real sería un `POST` (fichar, crear incidencias, solicitar o aprobar vacaciones, enviar mensajes) se guarda en el dispositivo y se mezcla con los datos del servidor.
 
 **Publicar en GitHub Pages:** sube el contenido de `backend/` a un repositorio (o a la carpeta `docs/` de uno) y activa Pages. Después escribe en la app la URL resultante, por ejemplo `https://<usuario>.github.io/erp-flutter-api`. La app pide `<url>/api/<recurso>.json`.
 
@@ -62,7 +67,7 @@ lib/
 ├── core/        # tema, branding (logo vectorial), roles, sesión, red, widgets comunes
 ├── data/        # repositorios + cambios locales
 ├── domain/      # modelos
-├── features/    # splash, auth, shell, home, attendance, incidents
+├── features/    # splash, auth, shell, home, attendance, incidents, holidays, messaging
 └── l10n/        # ARB (es, en, ca, ca_ES)
 ```
 

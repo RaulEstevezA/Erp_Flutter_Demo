@@ -4,6 +4,7 @@ import '../../data/local/local_changes_store.dart';
 import '../../data/repositories/attendance_repository.dart';
 import '../../data/repositories/auth_repository.dart';
 import '../../data/repositories/holiday_repository.dart';
+import '../../data/repositories/messaging_repository.dart';
 import '../../data/repositories/user_repository.dart';
 import '../network/api_client.dart';
 import '../session/session_store.dart';
@@ -19,6 +20,7 @@ class AppServices {
   final UserRepository users;
   final AttendanceRepository attendance;
   final HolidayRepository holidays;
+  final MessagingRepository messaging;
 
   AppServices._({
     required this.settings,
@@ -29,6 +31,7 @@ class AppServices {
     required this.users,
     required this.attendance,
     required this.holidays,
+    required this.messaging,
   });
 
   static Future<AppServices> create() async {
@@ -47,6 +50,7 @@ class AppServices {
       users: users,
       attendance: AttendanceRepository(api, localChanges, session, users),
       holidays: HolidayRepository(api, localChanges, session, users),
+      messaging: MessagingRepository(api, localChanges, session, users),
     );
   }
 }

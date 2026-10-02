@@ -473,4 +473,54 @@ class AppLocalizationsEs extends AppLocalizations {
   String holidaysOnDay(String date) {
     return 'Vacaciones el $date';
   }
+
+  @override
+  String get messagesNew => 'Nuevo mensaje';
+
+  @override
+  String get messagesList => 'Mensajes';
+
+  @override
+  String get messagesRecipientSearch => 'Buscar destinatario...';
+
+  @override
+  String get messagesRecipientRequired => 'Selecciona un destinatario';
+
+  @override
+  String get messagesNoRecipients => 'No hay destinatarios disponibles';
+
+  @override
+  String get messagesBody => 'Mensaje';
+
+  @override
+  String get messagesBodyHint => 'Escribe tu mensaje...';
+
+  @override
+  String get messagesBodyRequired => 'El mensaje no puede estar vacío';
+
+  @override
+  String get messagesSend => 'Enviar';
+
+  @override
+  String get messagesSent => 'Mensaje enviado';
+
+  @override
+  String get messagesSendError =>
+      'No se ha podido enviar el mensaje. Inténtalo de nuevo.';
+
+  @override
+  String get messagesEmpty => 'No tienes conversaciones todavía';
+
+  @override
+  String get messagesLoadError => 'No se han podido cargar los mensajes';
+
+  @override
+  String get messagesTypeHint => 'Escribe un mensaje...';
+
+  @override
+  String get messagesChatEmpty =>
+      'Todavía no hay mensajes en esta conversación';
+
+  @override
+  String get messagesYou => 'Tú: ';
 }

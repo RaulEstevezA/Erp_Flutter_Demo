@@ -204,6 +204,90 @@ def build_holidays(rnd: random.Random):
     return periods
 
 
+# Conversaciones 1 a 1. Cada mensaje: (remitente, minutos atrás, texto, leído).
+# "leído" indica si el destinatario ya lo había abierto al generar los datos.
+CONVERSATIONS = [
+    ((1, 2), [
+        (1, 4320, "Carlos, ¿me pasas el resumen de horas del equipo de este mes?", True),
+        (2, 4300, "Claro, te lo preparo esta tarde.", True),
+        (2, 2900, "Te lo acabo de dejar en la carpeta compartida.", True),
+        (1, 2880, "Perfecto, gracias.", True),
+        (2, 95, "Laura, hay dos solicitudes de vacaciones pendientes de revisar.", False),
+    ]),
+    ((2, 3), [
+        (3, 1500, "Hola Carlos, ayer olvidé fichar la salida. Ya he abierto una incidencia.", True),
+        (2, 1480, "Vale Ana, la reviso hoy.", True),
+        (2, 40, "Revisada y aprobada. Recuerda fichar al salir 😉", False),
+    ]),
+    ((1, 3), [
+        (1, 10100, "Bienvenida al equipo, Ana. Cualquier duda me dices.", True),
+        (3, 10080, "¡Muchas gracias, Laura!", True),
+    ]),
+    ((2, 6), [
+        (6, 2200, "Buenos días, ¿podríais confirmar la visita técnica del jueves?", True),
+        (2, 2150, "Buenos días. Confirmada para el jueves a las 10:00.", True),
+        (6, 300, "Perfecto. ¿Nos enviaréis el presupuesto actualizado?", False),
+        (6, 290, "Lo necesitamos para cerrar el pedido esta semana.", False),
+    ]),
+    ((3, 6), [
+        (3, 5000, "Le adjunto la documentación que nos pidió por correo.", True),
+        (6, 4900, "Recibida, gracias.", True),
+    ]),
+    ((2, 7), [
+        (7, 1800, "Os confirmamos que el material sale mañana del almacén.", True),
+        (2, 1790, "Genial, ¿con qué agencia de transporte?", True),
+        (7, 120, "Con la de siempre. Llegará en 48-72 h.", False),
+    ]),
+    ((2, 4), [
+        (2, 3000, "Javier, mañana necesito que pases por la obra de la calle Colón.", True),
+        (4, 2950, "Sin problema, voy a primera hora.", True),
+        (4, 60, "Ya estoy aquí. Falta material para terminar hoy.", True),
+        (2, 50, "Vale, te lo mando con Marta esta tarde.", False),
+    ]),
+    ((4, 5), [
+        (5, 700, "¿Te recojo mañana para ir al cliente?", True),
+        (4, 680, "Sí, a las 7:45 en la oficina.", True),
+        (5, 30, "Perfecto, allí estaré.", False),
+    ]),
+    ((1, 7), [
+        (1, 8000, "Necesitamos revisar las condiciones del contrato de suministro.", True),
+        (7, 7900, "Sin problema, ¿os va bien una reunión la semana que viene?", False),
+    ]),
+]
+
+AUTO_REPLIES = [
+    "Recibido, gracias.",
+    "Perfecto, lo reviso y te digo algo.",
+    "De acuerdo 👍",
+    "Ahora mismo estoy reunido, te respondo en un rato.",
+    "Gracias por avisar.",
+    "¡Genial!",
+]
+
+
+def build_messages():
+    conversations = []
+    messages = []
+    next_id = 1
+    for conv_id, (participants, items) in enumerate(CONVERSATIONS, start=1):
+        conversations.append({"id": conv_id, "participants": list(participants)})
+        for sender, minutes_ago, body, read in items:
+            messages.append({
+                "id": next_id,
+                "conversation_id": conv_id,
+                "sender_id": sender,
+                "minutes_ago": minutes_ago,
+                "body": body,
+                "read": read,
+            })
+            next_id += 1
+    return {
+        "conversations": conversations,
+        "messages": messages,
+        "auto_replies": AUTO_REPLIES,
+    }
+
+
 def write(name: str, payload) -> None:
     path = API_DIR / name
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -241,6 +325,7 @@ def main() -> None:
     })
     write("clock_in_records.json", {"success": True, "data": records})
     write("clock_in_incidents.json", {"success": True, "data": incidents})
+    write("messages.json", {"success": True, "data": build_messages()})
     write("holidays.json", {
         "success": True,
         "data": {

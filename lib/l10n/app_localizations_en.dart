@@ -468,4 +468,53 @@ class AppLocalizationsEn extends AppLocalizations {
   String holidaysOnDay(String date) {
     return 'Holidays on $date';
   }
+
+  @override
+  String get messagesNew => 'New message';
+
+  @override
+  String get messagesList => 'Messages';
+
+  @override
+  String get messagesRecipientSearch => 'Search recipient...';
+
+  @override
+  String get messagesRecipientRequired => 'Select a recipient';
+
+  @override
+  String get messagesNoRecipients => 'No recipients available';
+
+  @override
+  String get messagesBody => 'Message';
+
+  @override
+  String get messagesBodyHint => 'Write your message...';
+
+  @override
+  String get messagesBodyRequired => 'The message cannot be empty';
+
+  @override
+  String get messagesSend => 'Send';
+
+  @override
+  String get messagesSent => 'Message sent';
+
+  @override
+  String get messagesSendError =>
+      'Could not send the message. Please try again.';
+
+  @override
+  String get messagesEmpty => 'You have no conversations yet';
+
+  @override
+  String get messagesLoadError => 'Could not load messages';
+
+  @override
+  String get messagesTypeHint => 'Type a message...';
+
+  @override
+  String get messagesChatEmpty => 'No messages in this conversation yet';
+
+  @override
+  String get messagesYou => 'You: ';
 }

@@ -922,6 +922,102 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Vacaciones el {date}'**
   String holidaysOnDay(String date);
+
+  /// No description provided for @messagesNew.
+  ///
+  /// In es, this message translates to:
+  /// **'Nuevo mensaje'**
+  String get messagesNew;
+
+  /// No description provided for @messagesList.
+  ///
+  /// In es, this message translates to:
+  /// **'Mensajes'**
+  String get messagesList;
+
+  /// No description provided for @messagesRecipientSearch.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar destinatario...'**
+  String get messagesRecipientSearch;
+
+  /// No description provided for @messagesRecipientRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'Selecciona un destinatario'**
+  String get messagesRecipientRequired;
+
+  /// No description provided for @messagesNoRecipients.
+  ///
+  /// In es, this message translates to:
+  /// **'No hay destinatarios disponibles'**
+  String get messagesNoRecipients;
+
+  /// No description provided for @messagesBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Mensaje'**
+  String get messagesBody;
+
+  /// No description provided for @messagesBodyHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Escribe tu mensaje...'**
+  String get messagesBodyHint;
+
+  /// No description provided for @messagesBodyRequired.
+  ///
+  /// In es, this message translates to:
+  /// **'El mensaje no puede estar vacío'**
+  String get messagesBodyRequired;
+
+  /// No description provided for @messagesSend.
+  ///
+  /// In es, this message translates to:
+  /// **'Enviar'**
+  String get messagesSend;
+
+  /// No description provided for @messagesSent.
+  ///
+  /// In es, this message translates to:
+  /// **'Mensaje enviado'**
+  String get messagesSent;
+
+  /// No description provided for @messagesSendError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se ha podido enviar el mensaje. Inténtalo de nuevo.'**
+  String get messagesSendError;
+
+  /// No description provided for @messagesEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'No tienes conversaciones todavía'**
+  String get messagesEmpty;
+
+  /// No description provided for @messagesLoadError.
+  ///
+  /// In es, this message translates to:
+  /// **'No se han podido cargar los mensajes'**
+  String get messagesLoadError;
+
+  /// No description provided for @messagesTypeHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Escribe un mensaje...'**
+  String get messagesTypeHint;
+
+  /// No description provided for @messagesChatEmpty.
+  ///
+  /// In es, this message translates to:
+  /// **'Todavía no hay mensajes en esta conversación'**
+  String get messagesChatEmpty;
+
+  /// No description provided for @messagesYou.
+  ///
+  /// In es, this message translates to:
+  /// **'Tú: '**
+  String get messagesYou;
 }
 
 class _AppLocalizationsDelegate

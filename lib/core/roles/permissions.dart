@@ -1,11 +1,12 @@
 import 'app_role.dart';
 
 /// Capacidades de la app. Cada módulo comprueba la suya antes de mostrarse.
+///
+/// La mensajería no aparece: es un chat abierto a todos los usuarios.
 enum AppPermission {
   clockInOut,
   viewOwnAttendance,
   viewAllAttendance,
-  viewMessages,
   viewClients,
   viewWorkReports,
   createWorkReports,
@@ -23,7 +24,6 @@ abstract final class Permissions {
     AppPermission.clockInOut,
     AppPermission.viewOwnAttendance,
     AppPermission.viewAllAttendance,
-    AppPermission.viewMessages,
     AppPermission.viewClients,
     AppPermission.viewWorkReports,
     AppPermission.createWorkReports,
@@ -39,7 +39,6 @@ abstract final class Permissions {
     AppRole.user: {
       AppPermission.clockInOut,
       AppPermission.viewOwnAttendance,
-      AppPermission.viewMessages,
       AppPermission.viewWorkReports,
       AppPermission.viewHolidays,
       AppPermission.requestHolidays,
@@ -51,8 +50,8 @@ abstract final class Permissions {
       AppPermission.viewHolidays,
       AppPermission.requestHolidays,
     },
-    AppRole.customer: {AppPermission.viewMessages},
-    AppRole.supplier: {AppPermission.viewMessages},
+    AppRole.customer: {},
+    AppRole.supplier: {},
     AppRole.unknown: {},
   };
 

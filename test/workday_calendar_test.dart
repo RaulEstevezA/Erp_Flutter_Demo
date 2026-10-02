@@ -36,15 +36,9 @@ void main() {
       expect(AppRole.worker.can(AppPermission.viewAllAttendance), isFalse);
     });
 
-    test('clientes y proveedores solo tienen mensajes', () {
+    test('clientes y proveedores no tienen módulos (solo el chat, que es libre)', () {
       for (final role in [AppRole.customer, AppRole.supplier]) {
-        for (final permission in AppPermission.values) {
-          expect(
-            role.can(permission),
-            permission == AppPermission.viewMessages,
-            reason: '$role / $permission',
-          );
-        }
+        expect(AppPermission.values.where(role.can), isEmpty, reason: '$role');
       }
     });
 

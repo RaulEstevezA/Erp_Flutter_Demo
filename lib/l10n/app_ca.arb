@@ -136,5 +136,21 @@
   "holidaysSummaryCompany": "Empresa: {count} dies",
   "holidayByWorker": "Sol·licitat pel treballador",
   "holidayByCompany": "Assignat per l'empresa",
-  "holidaysOnDay": "Vacances el {date}"
+  "holidaysOnDay": "Vacances el {date}",
+  "messagesNew": "Nou missatge",
+  "messagesList": "Missatges",
+  "messagesRecipientSearch": "Cercar destinatari...",
+  "messagesRecipientRequired": "Selecciona un destinatari",
+  "messagesNoRecipients": "No hi ha destinataris disponibles",
+  "messagesBody": "Missatge",
+  "messagesBodyHint": "Escriu el teu missatge...",
+  "messagesBodyRequired": "El missatge no pot estar buit",
+  "messagesSend": "Enviar",
+  "messagesSent": "Missatge enviat",
+  "messagesSendError": "No s'ha pogut enviar el missatge. Torna-ho a provar.",
+  "messagesEmpty": "Encara no tens converses",
+  "messagesLoadError": "No s'han pogut carregar els missatges",
+  "messagesTypeHint": "Escriu un missatge...",
+  "messagesChatEmpty": "Encara no hi ha missatges en aquesta conversa",
+  "messagesYou": "Tu: "
 }

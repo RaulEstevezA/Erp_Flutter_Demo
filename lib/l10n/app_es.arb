@@ -226,5 +226,21 @@
         "type": "String"
       }
     }
-  }
+  },
+  "messagesNew": "Nuevo mensaje",
+  "messagesList": "Mensajes",
+  "messagesRecipientSearch": "Buscar destinatario...",
+  "messagesRecipientRequired": "Selecciona un destinatario",
+  "messagesNoRecipients": "No hay destinatarios disponibles",
+  "messagesBody": "Mensaje",
+  "messagesBodyHint": "Escribe tu mensaje...",
+  "messagesBodyRequired": "El mensaje no puede estar vacío",
+  "messagesSend": "Enviar",
+  "messagesSent": "Mensaje enviado",
+  "messagesSendError": "No se ha podido enviar el mensaje. Inténtalo de nuevo.",
+  "messagesEmpty": "No tienes conversaciones todavía",
+  "messagesLoadError": "No se han podido cargar los mensajes",
+  "messagesTypeHint": "Escribe un mensaje...",
+  "messagesChatEmpty": "Todavía no hay mensajes en esta conversación",
+  "messagesYou": "Tú: "
 }
