@@ -132,8 +132,9 @@ class WorkReportRepository {
     });
   }
 
-  /// Cambia una línea añadida en el dispositivo. Las del servidor no se
-  /// tocan. El precio es libre: se mantiene el que se indique, también 0.
+  /// Cambia una línea del parte (del servidor o añadida en el dispositivo).
+  /// El precio es libre para esa línea (también 0); el precio de catálogo
+  /// del producto no cambia.
   Future<void> updateLine(
     int reportId,
     String lineId, {
@@ -145,7 +146,6 @@ class WorkReportRepository {
     final report = await getReport(reportId);
     final line = report.lines.where((l) => l.id == lineId).firstOrNull;
     if (line == null) throw StateError('Línea no encontrada.');
-    if (!line.editable) throw StateError('Las líneas del servidor no se modifican.');
     final values = await _validLine(
       concept: concept,
       units: units,
@@ -302,19 +302,11 @@ class WorkReportRepository {
     final localSignatures = _changes.readMap(_localSignatures);
     final edits = _changes.readMap(_lineEdits);
 
-    WorkReportLine line(
-      String id,
-      Map<String, dynamic> original, {
-      required bool local,
-    }) {
-      // Solo las líneas propias se editan; en ellas mandan los valores editados.
-      final json = {
-        ...original,
-        if (local) ...?(edits[id] as Map<String, dynamic>?),
-      };
+    WorkReportLine line(String id, Map<String, dynamic> original) {
+      // Si la línea se ha editado, mandan los valores editados.
+      final json = {...original, ...?(edits[id] as Map<String, dynamic>?)};
       return WorkReportLine(
         id: id,
-        editable: local,
         productId: json['product_id'] as int?,
         productRef: products[json['product_id']]?.ref,
         hourly: products[json['product_id']]?.hourly ?? false,
@@ -345,14 +337,10 @@ class WorkReportRepository {
             lines: [
               for (final (i, l)
                   in (r['lines'] as List).cast<Map<String, dynamic>>().indexed)
-                line('r${r['id']}-$i', l, local: false),
+                line('r${r['id']}-$i', l),
               for (final (i, l)
                   in localLines.where((l) => l['report_id'] == r['id']).indexed)
-                line(
-                  l['id'] is int ? 'l${l['id']}' : 'l${r['id']}-$i',
-                  l,
-                  local: true,
-                ),
+                line(l['id'] is int ? 'l${l['id']}' : 'l${r['id']}-$i', l),
             ],
             workerNames: (r['worker_ids'] as List)
                 .map((id) => workers[id])

@@ -142,7 +142,7 @@ void main() {
     );
   });
 
-  test('el precio de una línea propia se puede cambiar; las del servidor no', () async {
+  test('todas las líneas se editan; el precio de catálogo no cambia', () async {
     final s = await _loggedInAs('trabajador@erpflutter.dev');
     final report = (await s.workReports.getReports(filter: WorkReportFilter.active))
         .items
@@ -152,14 +152,12 @@ void main() {
     await s.workReports.addLine(report.id,
         concept: official.concept, units: 1, duration: 60, productId: official.id, price: official.price);
     var mine = (await s.workReports.getReport(report.id)).lines.last;
-    expect(mine.editable, isTrue);
     expect(mine.total, 28);
 
     // Cliente muy irritante: el doble.
     await s.workReports.updateLine(report.id, mine.id,
         concept: mine.concept, units: mine.units, duration: 60, price: 56);
     mine = (await s.workReports.getReport(report.id)).lines.last;
-    expect(mine.price, 56);
     expect(mine.total, 56);
 
     // No se le cobra, pero consta.
@@ -170,13 +168,16 @@ void main() {
     expect(mine.duration, 60);
     expect(mine.total, 0);
 
+    // Una línea que viene del servidor también se puede corregir.
     final server = (await s.workReports.getReport(report.id)).lines.first;
-    expect(server.editable, isFalse);
-    expect(
-      s.workReports.updateLine(report.id, server.id,
-          concept: server.concept, units: server.units, duration: server.duration, price: 0),
-      throwsStateError,
-    );
+    await s.workReports.updateLine(report.id, server.id,
+        concept: server.concept, units: server.units, duration: server.duration, price: 0);
+    final edited = (await s.workReports.getReport(report.id)).lines.first;
+    expect(edited.id, server.id);
+    expect(edited.total, 0);
+
+    // El catálogo no se toca: el oficial sigue a 28 €/h.
+    expect((await s.workReports.searchProducts('MO-OFI')).single.price, 28);
   });
 
   test('en los datos de ejemplo, la mano de obra cuadra con sus minutos', () async {

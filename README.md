@@ -39,7 +39,7 @@ La mensajería es un chat abierto: cualquier usuario puede escribir a cualquier 
 | Mensajería: conversaciones, chat con sondeo periódico, nuevo mensaje, botón flotante con no leídos | ✅ |
 | Clientes (gestión): buscador, ficha, presupuestos, pedidos, albaranes, facturas y recurrentes con detalle | ✅ |
 | Partes de visita (gestión): elegir empresa, visitas por mes/rango/búsqueda, detalle y alta con técnicos | ✅ |
-| Partes de trabajo: activos/finalizados, búsqueda, fechas, agrupar por empresa (gestión), detalle, añadir líneas con productos y precio de catálogo editable, corregir el precio de las líneas propias (las del servidor no se modifican), total del parte, firma del cliente. El trabajador solo ve sus partes | ✅ |
+| Partes de trabajo: activos/finalizados, búsqueda, fechas, agrupar por empresa (gestión), detalle, añadir líneas con productos y precio de catálogo editable, editar cualquier línea (el precio de catálogo del producto no cambia), total del parte, firma del cliente. El trabajador solo ve sus partes | ✅ |
 | Archivos de los partes: fotos (cámara/galería), notas de voz (grabar/reproducir), eliminar, máx. 10 MB | ✅ |
 
 ## Backend estático

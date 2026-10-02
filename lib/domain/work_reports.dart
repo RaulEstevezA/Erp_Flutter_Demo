@@ -72,10 +72,6 @@ class WorkReportLine {
   /// Línea de mano de obra: [units] son horas.
   final bool hourly;
 
-  /// Añadida en el dispositivo. Las del servidor (base de datos del ERP)
-  /// no se modifican desde la app.
-  final bool editable;
-
   const WorkReportLine({
     required this.id,
     this.productId,
@@ -85,7 +81,6 @@ class WorkReportLine {
     required this.duration,
     this.price,
     this.hourly = false,
-    this.editable = false,
   });
 
   double? get total => price == null ? null : units * price!;

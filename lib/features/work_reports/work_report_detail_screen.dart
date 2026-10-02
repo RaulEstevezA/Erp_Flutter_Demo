@@ -223,9 +223,7 @@ class _Body extends StatelessWidget {
         if (report.lines.isEmpty)
           SectionCard(children: [MutedText(l10n.workReportsNoLines)])
         else
-          ...report.lines.map(
-            (line) => _LineCard(line: line, onTap: line.editable ? () => onEditLine(line) : null),
-          ),
+          ...report.lines.map((line) => _LineCard(line: line, onTap: () => onEditLine(line))),
         if (report.hasPrices)
           SectionCard(children: [
             Row(
@@ -340,11 +338,11 @@ class _InfoRow extends StatelessWidget {
   }
 }
 
-/// Línea de trabajo. Las añadidas en el dispositivo se editan al tocarlas
-/// (precio, minutos, unidades...); las del servidor solo se consultan.
+/// Línea de trabajo. Al tocarla se edita (precio, minutos, unidades...);
+/// el precio de catálogo del producto no cambia.
 class _LineCard extends StatelessWidget {
   final WorkReportLine line;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
 
   const _LineCard({required this.line, required this.onTap});
 
@@ -382,7 +380,7 @@ class _LineCard extends StatelessWidget {
                 ),
               ),
             ),
-            if (onTap != null) Icon(Icons.edit_outlined, size: 16, color: muted),
+            Icon(Icons.edit_outlined, size: 16, color: muted),
           ],
         ),
         Text(line.concept, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14)),
