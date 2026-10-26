@@ -247,8 +247,6 @@ There are 49 tests. They cover each role's permissions, the working-day calendar
 
 ## Deployment
 
-The [`deploy-demo.yml`](.github/workflows/deploy-demo.yml) workflow runs on every push to `main` and can also be started manually from *Actions*:
-
 1. Runs `flutter analyze` and `flutter test`.
 2. Builds the web app for the `/demos/ERP_Flutter/app/` path.
 3. Publishes to `demos/ERP_Flutter/` in the [RaulEstevezA.github.io](https://github.com/RaulEstevezA/RaulEstevezA.github.io) repository:
@@ -259,8 +257,6 @@ The [`deploy-demo.yml`](.github/workflows/deploy-demo.yml) workflow runs on ever
 | `demos/ERP_Flutter/app/` | Web app |
 | `demos/ERP_Flutter/api/` | Static backend |
 | `demos/ERP_Flutter/backend.html` | Backend landing page |
-
-It needs the `PORTFOLIO_DEPLOY_TOKEN` Actions secret: a *fine-grained* token with **Contents: Read and write** permission on `RaulEstevezA.github.io` only. The website's `demos/ERP_Flutter/` folder is fully replaced on every deployment, so it must not be edited by hand.
 
 ## Legal notice
 
