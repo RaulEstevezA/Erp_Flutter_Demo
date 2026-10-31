@@ -88,6 +88,22 @@ jobs:
           cp -R backend/api dist/api
           cp backend/index.html dist/backend.html
 
+      # Cada HTML publicado debe llevar el beacon de Cloudflare Web Analytics
+      # exactamente una vez (ver PUBLISHING.md de personal_web_style).
+      - name: Check analytics beacon
+        run: |
+          status=0
+          while IFS= read -r -d '' file; do
+            count=$(grep -o 'static.cloudflareinsights.com/beacon.min.js' "$file" | wc -l | tr -d ' ' || true)
+            if [ "$count" -ne 1 ]; then
+              echo "::error file=${file}::${file} contiene el beacon de Cloudflare Web Analytics ${count} veces (se esperaba exactamente 1)."
+              status=1
+            else
+              echo "OK ${file}"
+            fi
+          done < <(find dist -type f -name '*.html' -print0)
+          exit $status
+
       - name: Checkout site
         uses: actions/checkout@v7
         with:
